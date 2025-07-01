@@ -6,7 +6,7 @@ let
 in {
   imports = [
     ./git.nix
-    ./sway.nix
+    ./wm
     ./user.nix
     ./nemo.nix
     ./emacs.nix
