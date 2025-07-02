@@ -1,4 +1,4 @@
-{ inputs, system, userSettings, ... }:
+{ inputs, system, userSettings, userThemes, ... }:
 
 inputs.nixpkgs.lib.nixosSystem rec {
   inherit system;
@@ -21,7 +21,7 @@ inputs.nixpkgs.lib.nixosSystem rec {
   ];
 
   specialArgs = {
-    inherit userSettings;
+    inherit userSettings userThemes;
   };
 }
 
