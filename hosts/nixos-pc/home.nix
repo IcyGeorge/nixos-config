@@ -18,6 +18,7 @@
     ../../home/niri.nix
     ../../home/waybar.nix
     ../../home/fuzzel.nix
+    ../../home/mako.nix
 
   ];
 
