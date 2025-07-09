@@ -12,6 +12,7 @@
     ../../home/git.nix
     ../../home/nemo.nix
     ../../home/zen.nix
+    ../../home/gnome.nix
 
 
     # System (Desktop environment like stuff)
@@ -19,7 +20,7 @@
     ../../home/waybar.nix
     ../../home/fuzzel.nix
     ../../home/mako.nix
-
+    ../../home/gtk.nix
   ];
 
   home = {
@@ -27,8 +28,6 @@
     homeDirectory = "/home/" + config.var.username;
 
     packages = with pkgs; [
-      gnome-text-editor
-
       zip
       unzip
     ];

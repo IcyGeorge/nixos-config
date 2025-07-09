@@ -64,8 +64,8 @@
         width = 2;
         urgent.color = "#9b0000";
         active.gradient = {
-          from = "#d8a657";
-          to = "#ea6962";
+          from = "#a9b665";
+          to = "#d8a657";
           angle = 45;
           relative-to = "workspace-view";
         };
