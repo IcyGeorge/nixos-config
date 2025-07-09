@@ -92,103 +92,93 @@
       };
     };
     style = ''
-    * {
-      border: none;
-      border-radius: 0;
-      min-height: 0;
-      font-family: "Maple Mono";
-      font-weight: 500;
-      font-size: 14px;
-      padding: 0;
-    }
+/* === Base === */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "Maple Mono";
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0;
+}
 
-    window#waybar {
-      background: #282828; /* bg */
-      border: 2px solid #3c3836; /* bg2 */
-    }
+window#waybar {
+  background: #282828;         /* bg0 */
+  border: 2px solid #3c3836;   /* bg_current_world */
+}
 
-    tooltip {
-      background-color: #282828; /* bg */
-      border: 2px solid #504945; /* bg3 */
-    }
+/* === Tooltip === */
+tooltip {
+  background-color: #1b1b1b;  /* bg_dim */
+}
 
-    tooltip label {
-      color: #d4be98; /* fg */
-    }
+tooltip label {
+  margin: 6px 10px;
+  color: #d4be98;              /* fg1 */
+}
 
-    #clock,
-    #tray,
-    #cpu,
-    #memory,
-    #battery,
-    #network,
-    #pulseaudio {
-      margin: 6px 6px 6px 0px;
-      padding: 2px 8px;
-    }
+/* === Module Defaults === */
+#tray,
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio,
+#clock,
+#workspaces {
+  background-color: #1b1b1b;   /* bg_dim */
+  color: #d4be98;              /* fg0 */
+  border: 1px solid #3c3836;   /* bg_current_world */
+  margin: 6px 6px 6px 0;
+  padding: 2px 8px;
+}
 
-    #workspaces {
-      background-color: #32302f; /* bg1 */
-      margin: 6px 0px 6px 6px;
-      border: 2px solid #504945; /* bg3 */
-    }
+#workspaces {
+  margin: 6px 6px 6px 6px;
+  padding: 0px;
+}
 
-    #workspaces button {
-      all: initial;
-      min-width: 0;
-      box-shadow: inset 0 -3px transparent;
-      padding: 2px 4px;
-      color: #d4be98; /* fg */
-    }
+/* === Workspaces === */
+#workspaces button {
+  all: initial;
+  min-width: 0;
+  padding: 2px 10px;
+  color: #d4be98;              /* fg1 */
+  border-radius: 2px;
+}
 
-    #workspaces button.focused {
-      color: #d8a657; /* yellow */
-    }
+#workspaces button.focused {
+  background-color: #34381b;   /* bg_diff_green */
+  color: #a9b665;              /* green */
+}
 
-    #workspaces button.urgent {
-      background-color: #e78a4e; /* orange */
-    }
+#workspaces button.urgent {
+  background-color: #e78a4e;   /* orange */
+  color: #1b1b1b;              /* bg_dim */
+}
 
-    #clock {
-      background-color: #32302f; /* bg1 */
-      border: 2px solid #504945; /* bg3 */
-      color: #d4be98; /* fg */
-    }
+/* === Clock === */
+#clock {
+  background-color: #1b1b1b;   /* bg_dim */
+  border: 1px solid #3c3836;   /* bg_current_world */
+  color: #d4be98;              /* fg1 */
+}
 
-    #tray {
-      background-color: #d4be98; /* fg */
-      border: 2px solid #d8a657; /* yellow */
-    }
+/* === CPU / Memory / Battery Alerts === */
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #3c3836;   /* bg_current_world */
+  color: #ea6962;              /* red */
+  border-color: #3c3836;       /* red_bright */
+}
 
-    #battery {
-      background-color: #a9b665; /* green */
-      border: 2px solid #d8a657; /* yellow */
-      color: #32302f; /* bg1 */
-    }
-
-    #cpu,
-    #memory,
-    #network,
-    #pulseaudio {
-      background-color: #d4be98; /* fg */
-      border: 2px solid #d8a657; /* yellow */
-      color: #282828; /* bg */
-    }
-
-    #cpu.critical,
-    #memory.critical {
-      background-color: #d4be98; /* fg */
-      border: 2px solid #d8a657; /* yellow */
-      color: #ea6962; /* red */
-    }
-
-    #battery.warning,
-    #battery.critical,
-    #battery.urgent {
-      background-color: #d4be98; /* fg */
-      border: 2px solid #d8a657; /* yellow */
-      color: #ea6962; /* red */
-    }
+#cpu.critical,
+#memory.critical {
+  color: #ea6962;              /* red */
+  border-color: #402120;       /* bg_diff_red */
+}
 
     '';
   };
