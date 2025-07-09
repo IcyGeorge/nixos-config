@@ -41,6 +41,10 @@ in {
       xkb.layout = keyboardLayout;
       xkb.variant = "";
     };
+    dbus = {
+      enable = true;
+      implementation = "broker";
+    };
     gnome.gnome-keyring.enable = true;
   };
   console.keyMap = keyboardLayout;
@@ -67,6 +71,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    networkmanagerapplet
     xdg-utils
     wget
     curl
