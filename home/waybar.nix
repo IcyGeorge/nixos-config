@@ -77,7 +77,7 @@
           "format-disconnected" = "no network";
           interval = 5;
           tooltip = false;
-          "on-click" = "alacritty nmtui";
+          "on-click" = "nm-connection-editor";
         };
 
         pulseaudio = {

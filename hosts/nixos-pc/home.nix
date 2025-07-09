@@ -8,7 +8,8 @@
     ./variables.nix
 
     # Programs
-    ../../home/alacritty.nix
+    #../../home/alacritty.nix
+    ../../home/foot.nix
     ../../home/git.nix
     ../../home/nemo.nix
     ../../home/zen.nix

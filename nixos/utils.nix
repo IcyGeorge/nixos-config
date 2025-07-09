@@ -40,6 +40,7 @@ in {
       enable = true;
       xkb.layout = keyboardLayout;
       xkb.variant = "";
+      excludePackages = [ pkgs.xterm ];
     };
     dbus = {
       enable = true;
@@ -53,8 +54,8 @@ in {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     EDITOR = "nvim";
-    TERMINAL = "alacritty";
-    TERM = "alacritty";
+    TERMINAL = "foot";
+    TERM = "foot";
     BROWSER = "zen-beta";
   };
 
@@ -71,6 +72,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    pavucontrol
     networkmanagerapplet
     xdg-utils
     wget

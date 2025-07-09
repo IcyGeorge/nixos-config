@@ -19,6 +19,7 @@
       show-open-in-terminal-toolbar = false;
       show-show-thumbnails-toolbar = false;
       thumbnail-limit = 10485760;
+      default-view = "compact";
     };
     "org/nemo/preferences/menu-config" = {
       background-menu-open-as-root = false;

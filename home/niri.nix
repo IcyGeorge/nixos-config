@@ -92,8 +92,8 @@
       "Mod+Shift+Slash".action = show-hotkey-overlay;
 
       # ── Application Launchers ── 
-      "Mod+Return".hotkey-overlay.title = "Open a Terminal: alacritty";
-      "Mod+Return".action = spawn "alacritty";
+      "Mod+Return".hotkey-overlay.title = "Open a Terminal: foot";
+      "Mod+Return".action = spawn "foot";
 
       "Mod+D".hotkey-overlay.title = "Run an Application: fuzzel";
       "Mod+D".action = spawn "fuzzel";
