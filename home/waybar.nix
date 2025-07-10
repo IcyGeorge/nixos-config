@@ -118,6 +118,11 @@ tooltip label {
   color: #d4be98;              /* fg1 */
 }
 
+#tray menu {
+  padding: 6px 10px;
+}
+
+
 /* === Module Defaults === */
 #tray,
 #cpu,
