@@ -14,6 +14,7 @@
     ../../home/nemo.nix
     ../../home/zen.nix
     ../../home/gnome.nix
+    ../../home/lazygit.nix
 
 
     # System (Desktop environment like stuff)
