@@ -119,7 +119,7 @@ tooltip label {
 }
 
 #tray menu {
-  padding: 6px 10px;
+  padding: 6px 6px;
 }
 
 
