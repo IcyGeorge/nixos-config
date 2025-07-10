@@ -15,6 +15,7 @@
     ../../home/zen.nix
     ../../home/gnome.nix
     ../../home/lazygit.nix
+    ../../home/xdg-mime.nix
 
 
     # System (Desktop environment like stuff)

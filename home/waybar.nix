@@ -173,12 +173,7 @@ tooltip label {
 /* === CPU / Memory / Battery Alerts === */
 #battery.warning,
 #battery.critical,
-#battery.urgent {
-  background-color: #3c3836;   /* bg_current_world */
-  color: #ea6962;              /* red */
-  border-color: #3c3836;       /* red_bright */
-}
-
+#battery.urgent,
 #cpu.critical,
 #memory.critical {
   color: #ea6962;              /* red */
