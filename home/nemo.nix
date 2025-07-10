@@ -19,7 +19,7 @@
       show-open-in-terminal-toolbar = false;
       show-show-thumbnails-toolbar = false;
       thumbnail-limit = 10485760;
-      default-view = "compact";
+      default-folder-viewer = "compact-view";
     };
     "org/nemo/preferences/menu-config" = {
       background-menu-open-as-root = false;
@@ -39,5 +39,10 @@
       sidebar-width = 220;
       start-with-sidebar = true;
     };
+    "org/nemo/list-view" = {
+      default-visible-columns = [ "name" "size" "date_modified" "owner" "permissions" ];
+      use-tree-view = false;
+      zoom-level = "small";
+};
   };
 }
