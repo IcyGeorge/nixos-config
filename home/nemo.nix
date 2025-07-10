@@ -1,6 +1,21 @@
-{ pkgs, ... }:
+{config, pkgs, ... }:
+let
+  user = config.var.username;
+  configDirectory = config.var.configDirectory;
+in
 {
   home.packages = with pkgs; [ nemo ];
+  
+    # bookmarks for the side pane
+  gtk.gtk3.bookmarks = [
+    "file:///home/${user}/Downloads Downloads"
+    "file:///home/${user}/Pictures Pictures"
+    "file://${configDirectory} NixOS"
+    # will be added later as part of my dev env
+    #"file:///home/${user}/Developement/Android/StudioProjects StudioProjects"
+    #"file:///home/${user}/Developement/Godot Godot"
+  ];
+
 
   dconf.settings = {
     "org/nemo/preferences" = {
