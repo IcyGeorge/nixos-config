@@ -53,7 +53,7 @@ in {
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    EDITOR = "nvim";
+    EDITOR = "gnome-text-editor";
     TERMINAL = "foot";
     TERM = "foot";
     BROWSER = "zen-beta";
@@ -72,7 +72,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    pavucontrol
+    pwvucontrol
     networkmanagerapplet
     xdg-utils
     wget
@@ -89,8 +89,10 @@ in {
 
     extraPortals = [
       pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gnome 
       pkgs.xdg-desktop-portal-gtk 
     ];
+    configPackages = [pkgs.xdg-desktop-portal-gtk];
   };
 
   security = {
