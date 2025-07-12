@@ -16,6 +16,7 @@
     ../../home/gnome.nix
     ../../home/lazygit.nix
     ../../home/xdg-mime.nix
+    ../../home/spicetify.nix
 
 
     # System (Desktop environment like stuff)
