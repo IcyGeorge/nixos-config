@@ -1,4 +1,7 @@
 {config, lib, pkgs, ...}:
+let
+  configDirectory = config.var.configDirectory;
+in
 {
 
   home.packages = with pkgs; [
@@ -26,7 +29,7 @@
     prefer-no-csd = true;
     spawn-at-startup = [
       { command = ["waybar"]; }
-      { command = [ "sh" "-c" "swaybg -i ~/Pictures/Wallpapers/astronaut.jpg" ]; } 
+      { command = [ "sh" "-c" "swaybg -i ${configDirectory}/assets/wallpapers/wallpaper.jpg" ]; } 
     ];
     input = {
       focus-follows-mouse = {
