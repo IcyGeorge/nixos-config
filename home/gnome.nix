@@ -10,6 +10,9 @@
   );
 
   dconf.settings = {
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu";
+    };
     "org/gnome/TextEditor" = {
       custom-font = "Maple Mono 14";
       highlight-current-line = true;
