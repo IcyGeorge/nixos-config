@@ -7,6 +7,12 @@ in
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.onepunch;
+    enabledExtensions = with spicePkgs.extensions; [
+      fullAppDisplay
+      historyShortcut
+      hidePodcasts
+      keyboardShortcut
+    ];
   };
 }
 

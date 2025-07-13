@@ -1,10 +1,28 @@
-{config, pkgs, ...}:
+{config, lib, pkgs, ...}:
 {
+
   home.packages = with pkgs; [
     swaybg
+    xwayland-satellite-unstable
   ];
-    
+
+  programs.niri.package = pkgs.niri-unstable;
   programs.niri.settings = {
+    xwayland-satellite.path = "${lib.getExe pkgs.xwayland-satellite-unstable}";
+    environment = {
+      XDG_CURRENT_DESKTOP = "Niri";
+      XDG_SESSION_TYPE    = "wayland";
+      XDG_SESSION_DESKTOP = "Niri";
+
+      MOZ_ENABLE_WAYLAND            = "1";
+      NIXOS_OZONE_WL                = "1";
+      QT_QPA_PLATFORM               = "wayland,xcb";
+      #QT_AUTO_SCREEN_SCALE_FACTOR   = "1";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      ELECTRON_OZONE_PLATFORM_HINT  = "auto";
+      SDL_VIDEODRIVER               = "wayland";
+      CLUTTER_BACKEND               = "wayland";
+    };
     prefer-no-csd = true;
     spawn-at-startup = [
       { command = ["waybar"]; }
@@ -18,7 +36,7 @@
       keyboard = {
         numlock = true;
         xkb = {
-          layout = "us,ara";
+          layout = "us";
           options = "grp:win_space_toggle";
         };
       };
