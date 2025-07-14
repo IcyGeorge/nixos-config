@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     search-nixos-api.url = "github:anotherhadi/search-nixos-api";
+    android-nixpkgs = {
+      url = "github:tadfisher/android-nixpkgs/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {nixpkgs, ...}: {
@@ -28,7 +32,10 @@
         nixpkgs.lib.nixosSystem {
           modules = [
             {
-              nixpkgs.overlays = [inputs.niri.overlays.niri];
+              nixpkgs.overlays = [
+                inputs.niri.overlays.niri
+                inputs.android-nixpkgs.overlays.default
+              ];
               _module.args = {inherit inputs;};
             }
             inputs.home-manager.nixosModules.home-manager

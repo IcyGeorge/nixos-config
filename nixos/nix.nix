@@ -11,6 +11,7 @@ in {
   nixpkgs.config = {
     allowUnfree = true;
     allowBroken = true;
+    android_sdk.accept_license = true;
   };
   nix = {
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

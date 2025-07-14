@@ -30,6 +30,10 @@
 
     autoUpgrade = false;
     autoGarbageCollector = true;
+    
+    features = {
+      androidDev = true; # android
+    };
   };
 
   # Let this here

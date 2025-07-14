@@ -8,7 +8,6 @@
         font = "Maple Mono:style=Medium:size=14";
         pad = "5x5";
         term = "foot";
-        shell = "${pkgs.fish}/bin/fish";
       };
 
       colors = {
