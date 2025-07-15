@@ -51,6 +51,14 @@ in
 
       warp-mouse-to-focus.enable = true;
     };
+    
+    outputs."HDMI-A-1" = {
+      scale = 1.5;
+      position = {
+        x = -2560;
+        y = 0;
+      };
+    };
 
     layout = {
       gaps = 8;

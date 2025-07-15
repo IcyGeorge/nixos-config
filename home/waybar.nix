@@ -31,7 +31,7 @@
 
         "niri/workspaces" = {
           "disable-scroll" = true;
-          "all-outputs" = true;
+          "all-outputs" = false;
           tooltip = false;
         };
 
