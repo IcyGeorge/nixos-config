@@ -16,12 +16,11 @@
       + config.var.username
       + "/nixos-config"; # The path of the nixos configuration directory
 
-    keyboardLayout = "us,ara";
+    keyboardLayout = "us";
 
     location = "Cairo";
     timeZone = "Africa/Cairo";
     defaultLocale = "en_US.UTF-8";
-    extraLocale = "en_US.UTF-8";
 
     git = {
       username = "icygeorge";
