@@ -9,7 +9,7 @@
   ];
 
   config.var = {
-    hostname = "nixos-pc";
+    hostname = "nixos-laptop";
     username = "gmelika";
     configDirectory =
       "/home/"
