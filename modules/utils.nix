@@ -69,6 +69,8 @@ in
     curl
     vim
     nixpkgs-fmt
+    zip
+    unzip
   ];
 
   xdg.portal = {
