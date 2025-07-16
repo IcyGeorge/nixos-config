@@ -1,7 +1,6 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }: {
   imports = [
     # Choose your theme here:
@@ -29,7 +28,7 @@
 
     autoUpgrade = false;
     autoGarbageCollector = true;
-    
+
     features = {
       androidDev = true; # android
     };
@@ -39,7 +38,7 @@
   options = {
     var = lib.mkOption {
       type = lib.types.attrs;
-      default = {};
+      default = { };
     };
   };
 }

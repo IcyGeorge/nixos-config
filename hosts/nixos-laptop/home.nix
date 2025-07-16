@@ -1,7 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
+{ pkgs
+, config
+, ...
 }: {
   imports = [
     # Mostly user-specific configuration
@@ -9,22 +8,17 @@
 
     # Programs
     #../../home/alacritty.nix
-    ../../home/foot.nix
-    ../../home/git.nix
-    ../../home/nemo.nix
-    ../../home/zen.nix
-    ../../home/gnome.nix
-    ../../home/lazygit.nix
-    ../../home/xdg-mime.nix
-    ../../home/spicetify.nix
+
+
+
+
+
 
 
     # System (Desktop environment like stuff)
-    ../../home/niri.nix
-    ../../home/waybar.nix
-    ../../home/fuzzel.nix
-    ../../home/mako.nix
-    ../../home/gtk.nix
+
+
+
   ];
 
   home = {

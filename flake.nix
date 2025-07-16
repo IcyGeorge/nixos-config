@@ -26,7 +26,7 @@
     };
   };
 
-  outputs = inputs @ {nixpkgs, ...}: {
+  outputs = inputs @ { nixpkgs, ... }: {
     nixosConfigurations = {
       nixos-pc =
         nixpkgs.lib.nixosSystem {
@@ -36,14 +36,14 @@
                 inputs.niri.overlays.niri
                 inputs.android-nixpkgs.overlays.default
               ];
-              _module.args = {inherit inputs;};
+              _module.args = { inherit inputs; };
             }
             inputs.home-manager.nixosModules.home-manager
             inputs.niri.nixosModules.niri
             ./hosts/nixos-pc/configuration.nix
           ];
         };
-        
+
       nixos-laptop =
         nixpkgs.lib.nixosSystem {
           modules = [
@@ -52,7 +52,7 @@
                 inputs.niri.overlays.niri
                 inputs.android-nixpkgs.overlays.default
               ];
-              _module.args = {inherit inputs;};
+              _module.args = { inherit inputs; };
             }
             inputs.home-manager.nixosModules.home-manager
             inputs.niri.nixosModules.niri

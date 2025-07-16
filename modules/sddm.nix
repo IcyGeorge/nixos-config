@@ -3,7 +3,8 @@
 let
   foreground = config.theme.textColorOnWallpaper;
   sddm-astronaut = pkgs.sddm-astronaut;
-in {
+in
+{
   services.displayManager = {
     sddm = {
       package = pkgs.kdePackages.sddm;

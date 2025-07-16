@@ -6,7 +6,8 @@ let
   timeZone = config.var.timeZone;
   defaultLocale = config.var.defaultLocale;
   autoUpgrade = config.var.autoUpgrade;
-in {
+in
+{
   networking.hostName = hostname;
 
   networking.networkmanager.enable = true;
@@ -67,6 +68,7 @@ in {
     wget
     curl
     vim
+    nixpkgs-fmt
   ];
 
   xdg.portal = {
@@ -82,10 +84,10 @@ in {
 
     extraPortals = [
       pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gnome 
-      pkgs.xdg-desktop-portal-gtk 
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
     ];
-    configPackages = [pkgs.xdg-desktop-portal-gtk];
+    configPackages = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   security = {

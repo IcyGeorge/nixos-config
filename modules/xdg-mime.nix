@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 with lib;
 let
   defaultApps = {
@@ -82,20 +82,24 @@ let
     with lists;
     listToAttrs (
       flatten (
-        mapAttrsToList (
-          key: map (type: attrsets.nameValuePair type defaultApps."${key}")
-        ) mimeMap
+        mapAttrsToList
+          (
+            key: map (type: attrsets.nameValuePair type defaultApps."${key}")
+          )
+          mimeMap
       )
     );
 in
 {
-  xdg.configFile."mimeapps.list".force = true;
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.associations.added = associations;
-  xdg.mimeApps.defaultApplications = associations;
+  home-manager.users.${config.var.username} = {
+    xdg.configFile."mimeapps.list".force = true;
+    xdg.mimeApps.enable = true;
+    xdg.mimeApps.associations.added = associations;
+    xdg.mimeApps.defaultApplications = associations;
 
-  home.sessionVariables = {
-    # prevent wine from creating file associations
-    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+    home.sessionVariables = {
+      # prevent wine from creating file associations
+      WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+    };
   };
 }
