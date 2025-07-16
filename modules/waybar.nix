@@ -16,9 +16,9 @@
           height = 0;
 
           "margin-top" = 8;
-          "margin-right" = 8;
-          "margin-bottom" = 0;
-          "margin-left" = 8;
+          "margin-right" = 0;
+          "margin-bottom" = 8;
+          "margin-left" = 0;
 
           "modules-left" = [ "sway/workspaces" ];
           "modules-center" = [ "clock" ];

@@ -34,7 +34,7 @@
     home = {
       inherit (config.var) username;
       homeDirectory = "/home/" + config.var.username;
-      
+
       # Don't touch this
       stateVersion = "25.05";
     };

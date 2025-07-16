@@ -1,43 +1,59 @@
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
 let
-  username = config.var.username;
-  androidSdk = inputs.android-nixpkgs.sdk.x86_64-linux (sdkPkgs: with sdkPkgs; [
-    cmdline-tools-latest
-    platform-tools
-    add-ons-addon-google-apis-google-24
-    build-tools-36-0-0
-    platforms-android-36
-    sources-android-36
-    emulator
-    system-images-android-36-google-apis-x86-64
-    system-images-android-36-google-apis-playstore-x86-64
-  ]);
-  androidSdkPath = "${androidSdk}/share/android-sdk";
+  sdkPath =
+    "/home/"
+    + config.var.username
+    + "/Android/Sdk"; # why? because android studio sucks!! 
 
 in
 {
-  environment.systemPackages = with pkgs; [
-    androidSdk
-    gradle
-    jdk17
-    firebase-tools
-    qemu_kvm
-    xorg.libX11
-    ruby
-    bundler
-    (android-studio.override { forceWayland = true; }) # to fix studio with hiDPI monitors
-  ];
+  home-manager.users.${config.var.username} = {
+
+    imports = [
+      inputs.android-nixpkgs.hmModule
+      {
+        android-sdk = {
+          enable = true;
+          path = sdkPath;
+          packages = sdk: with sdk; [
+            cmdline-tools-latest
+            platform-tools
+            #add-ons-addon-google-apis-google-24
+            build-tools-36-0-0
+            platforms-android-36
+            #sources-android-36
+            emulator
+            #system-images-android-36-google-apis-x86-64 -> if you don't need playstore 
+            system-images-android-36-google-apis-playstore-x86-64
+          ];
+        };
+      }
+    ];
+    home.packages = with pkgs; [
+      gradle
+      jdk17
+      firebase-tools
+      qemu_kvm
+      xorg.libX11
+      ruby
+      bundler
+      (android-studio.override { forceWayland = true; }) # to fix studio with hiDPI monitors
+    ];
+  };
+
+
 
   programs.adb.enable = true;
-  users.users.${username}.extraGroups = [ "adbusers" "kvm" ];
+  users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" ];
 
   environment.variables = {
-    ANDROID_HOME = androidSdkPath; # Primary as per docs
-    ANDROID_SDK_ROOT = androidSdkPath; # Kept for compatibility
+    ANDROID_HOME = sdkPath; # Primary as per docs
+    ANDROID_SDK_ROOT = sdkPath; # Kept for compatibility
     GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=$ANDROID_HOME/libexec/android-sdk/build-tools/36.0.0/aapt2";
     JAVA_HOME = pkgs.jdk17.home;
     _JAVA_AWT_WM_NONREPARENTING = "1";
