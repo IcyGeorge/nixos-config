@@ -2,6 +2,9 @@
   imports = [
     #../../modules/android-dev.nix
     #../../modules/ruby.nix
+    ../../modules/slack.nix
+    ../../modules/zoom-us.nix
+    ../../modules/hardware.nix
     ../../modules/nix-ld.nix
     ../../modules/audio.nix
     ../../modules/bluetooth.nix

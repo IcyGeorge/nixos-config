@@ -49,6 +49,8 @@ let
     ];
     directory = [ "inode/directory" ];
     browser = [
+      "https://"
+      "http://"
       "text/html"
       "x-scheme-handler/about"
       "x-scheme-handler/http"

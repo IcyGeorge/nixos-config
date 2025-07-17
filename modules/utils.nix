@@ -76,13 +76,13 @@ in
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    #config = {
-    #common = {
-    #default = [ "gtk" "gnome" ];
+    config = {
+    common = {
+    default = [ "wlr" "gtk" "gnome" ];
     #"org.freedesktop.impl.portal.FileChooser" = "gtk";
     #"org.freedesktop.impl.portal.screenCast" = "gnome";
-    #};
-    #};
+    };
+    };
 
     extraPortals = [
       pkgs.xdg-desktop-portal

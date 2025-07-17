@@ -28,6 +28,7 @@ let
 in
 {
 
+  security.polkit.enable = true;
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -41,6 +42,7 @@ in
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
     };
+
     wayland.windowManager.sway = {
       enable = true;
       xwayland = true;
