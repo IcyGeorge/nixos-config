@@ -15,9 +15,9 @@
           spacing = 0;
           height = 0;
 
-          "margin-top" = 8;
+          "margin-top" = 0;
           "margin-right" = 0;
-          "margin-bottom" = 8;
+          "margin-bottom" = 0;
           "margin-left" = 0;
 
           "modules-left" = [ "sway/workspaces" ];
