@@ -8,6 +8,7 @@
     ../../modules/fonts.nix
     ../../modules/foot.nix
     ../../modules/fuzzel.nix
+    ../../modules/fish.nix
     ../../modules/git.nix
     ../../modules/gnome.nix
     ../../modules/gtk.nix

@@ -31,21 +31,19 @@ in
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraSessionCommands = ''
-      export XDG_CURRENT_DESKTOP = "Sway"
-      export XDG_SESSION_TYPE = "wayland"
-      export XDG_SESSION_DESKTOP = "Sway"
-      export MOZ_ENABLE_WAYLAND = "1"
-      export NIXOS_OZONE_WL = "1"
-      export QT_QPA_PLATFORM = "wayland,xcb"
-      export QT_AUTO_SCREEN_SCALE_FACTOR   = "1"
-      export QT_WAYLAND_DISABLE_WINDOWDECORATION = "1"
-      export ELECTRON_OZONE_PLATFORM_HINT = "auto"
-    '';
   };
   home-manager.users.${config.var.username} = {
+    home.sessionVariables = {
+      MOZ_ENABLE_WAYLAND = "1";
+      NIXOS_OZONE_WL = "1";
+      QT_QPA_PLATFORM = "wayland,xcb";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    };
     wayland.windowManager.sway = {
       enable = true;
+      xwayland = true;
       package = pkgs.sway;
       checkConfig = false;
       config = {
