@@ -54,14 +54,14 @@ in
         menu = menu;
         floating.modifier = mod;
 
-input = {
-"*".xkb_options = "grp:alt_shift_toggle,caps:escape";
-        "*" = {
-          tap = "enabled";
-          dwt = "enabled";
-          natural_scroll = "enabled";
+        input = {
+          "*".xkb_options = "grp:alt_shift_toggle,caps:escape";
+          "*" = {
+            tap = "enabled";
+            dwt = "enabled";
+            natural_scroll = "enabled";
+          };
         };
-};
         output = {
           "*".bg = "${configDirectory}/assets/wallpapers/wallpaper.jpg fill";
           HDMI-A-1 = {
