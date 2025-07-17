@@ -2,6 +2,13 @@
 {
   environment.systemPackages = with pkgs; [
     ruby
-    bundler
+      bundler
+  libffi
+  libyaml
+  zlib
+  openssl
+  pkg-config
+  gcc
+  gnumake
   ];
 }

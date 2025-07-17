@@ -52,7 +52,7 @@ in
   environment.variables = {
     ANDROID_HOME = sdkPath; # Primary as per docs
     ANDROID_SDK_ROOT = sdkPath; # Kept for compatibility
-    GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=$ANDROID_HOME/libexec/android-sdk/build-tools/36.0.0/aapt2";
+    GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=$ANDROID_HOME/build-tools/35.0.0/aapt2";
     JAVA_HOME = pkgs.jdk17.home;
     _JAVA_AWT_WM_NONREPARENTING = "1";
 

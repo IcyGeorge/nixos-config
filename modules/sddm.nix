@@ -7,15 +7,15 @@ in
 {
   services.displayManager = {
     sddm = {
-      package = pkgs.kdePackages.sddm;
-      extraPackages = [ sddm-astronaut ];
+      #package = pkgs.kdePackages.sddm;
+      #extraPackages = [ sddm-astronaut ];
       enable = true;
       wayland.enable = true;
-      theme = "sddm-astronaut-theme";
+      #theme = "sddm-astronaut-theme";
     };
   };
 
-  environment.systemPackages = [ sddm-astronaut ];
+  #environment.systemPackages = [ sddm-astronaut ];
 
   # To prevent getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
