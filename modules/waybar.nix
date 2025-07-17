@@ -24,6 +24,7 @@
           "modules-center" = [ "clock" ];
           "modules-right" = [
             "tray"
+            "sway/mode"
             "cpu_text"
             "cpu"
             "memory"
@@ -41,6 +42,11 @@
           tray = {
             spacing = 10;
             tooltip = false;
+          };
+
+          "sway/mode" = {
+            "format" = "{}";
+            "max-length" = 50;
           };
 
           clock = {
@@ -128,6 +134,7 @@
 
         /* === Module Defaults === */
         #tray,
+        #mode,
         #cpu,
         #memory,
         #battery,

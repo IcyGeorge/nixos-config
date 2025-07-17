@@ -1,6 +1,8 @@
 { config, ... }: {
   imports = [
-    ../../modules/android-dev.nix
+    #../../modules/android-dev.nix
+    #../../modules/ruby.nix
+    ../../modules/nix-ld.nix
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
     ../../modules/fonts.nix

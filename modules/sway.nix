@@ -54,14 +54,20 @@ in
         menu = menu;
         floating.modifier = mod;
 
-        # Wallpaper (uses wildcard “*” output)
+input = {
+"*".xkb_options = "grp:alt_shift_toggle,caps:escape";
+        "*" = {
+          tap = "enabled";
+          dwt = "enabled";
+          natural_scroll = "enabled";
+        };
+};
         output = {
           "*".bg = "${configDirectory}/assets/wallpapers/wallpaper.jpg fill";
           HDMI-A-1 = {
             scale = "1.5";
             position = "0 -2560";
           };
-
         };
 
 
@@ -194,6 +200,7 @@ in
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+space" = "focus mode_toggle";
           "${mod}+a" = "focus parent";
+          "${mod}+r" = "mode resize";
 
           # scratchpad ---------------------------------------------------------
           "${mod}+Shift+minus" = "move scratchpad";
@@ -237,6 +244,9 @@ in
 
         # screenshot
         bindsym Print exec grim
+        
+        # title
+        title_align center
       '';
     };
   };
