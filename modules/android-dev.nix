@@ -24,9 +24,9 @@ in
             cmdline-tools-latest
             platform-tools
             #add-ons-addon-google-apis-google-24
-            build-tools-36-0-0
-            platforms-android-36
-            #sources-android-36
+            build-tools-35-0-0
+            platforms-android-35
+            sources-android-35
             emulator
             #system-images-android-36-google-apis-x86-64 -> if you don't need playstore 
             system-images-android-36-google-apis-playstore-x86-64
@@ -40,8 +40,6 @@ in
       firebase-tools
       qemu_kvm
       xorg.libX11
-      ruby
-      bundler
       (android-studio.override { forceWayland = true; }) # to fix studio with hiDPI monitors
     ];
   };

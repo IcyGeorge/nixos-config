@@ -25,7 +25,7 @@
     initrd.verbose = false;
 
     plymouth = {
-      enable = true;
+      enable = false;
       theme = lib.mkForce "cuts_alt";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
