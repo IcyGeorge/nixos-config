@@ -35,10 +35,15 @@ in
     home.sessionVariables = {
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
-      QT_QPA_PLATFORM = "wayland,xcb";
+      QT_QPA_PLATFORM = "wayland";
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+      CLUTTER_BACKEND = "wayland";
+      SDL_VIDEODRIVER = "wayland";
+      XDG_CURRENT_DESKTOP = "sway";
+      XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "sway";
     };
 
     wayland.windowManager.sway = {

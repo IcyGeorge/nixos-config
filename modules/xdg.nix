@@ -113,6 +113,14 @@ in
     xdg.mimeApps.enable = true;
     xdg.mimeApps.associations.added = associations;
     xdg.mimeApps.defaultApplications = associations;
+    xdg.desktopEntries.slack = {
+      name = "Slack";
+      genericName = "Slack for Linux";
+      icon = "slack";
+      type = "Application";
+      exec = "slack --enable-features=UseOzonePlatform --ozone-platform=wayland --use-gl=egl";
+      categories = [ "Network" "InstantMessaging" ];
+    };
 
 
     home.sessionVariables = {
