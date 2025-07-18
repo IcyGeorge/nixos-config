@@ -2,6 +2,8 @@
   imports = [
     #../../modules/android-dev.nix
     #../../modules/ruby.nix
+    ../../modules/hyprland.nix
+    ../../modules/kitty.nix
     ../../modules/slack.nix
     ../../modules/zoom-us.nix
     ../../modules/hardware.nix
@@ -23,7 +25,7 @@
     ../../modules/sddm.nix
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
-    ../../modules/sway.nix
+    #../../modules/sway.nix
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
