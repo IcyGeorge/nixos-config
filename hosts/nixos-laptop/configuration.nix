@@ -27,7 +27,7 @@
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
-    ../../modules/xdg-mime.nix
+    ../../modules/xdg.nix
     ../../modules/zen.nix
 
 

@@ -64,7 +64,6 @@ in
   environment.systemPackages = with pkgs; [
     pwvucontrol
     networkmanagerapplet
-    xdg-utils
     wget
     curl
     vim
@@ -73,29 +72,9 @@ in
     unzip
   ];
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-    common = {
-    default = [ "wlr" "gtk" "gnome" ];
-    #"org.freedesktop.impl.portal.FileChooser" = "gtk";
-    #"org.freedesktop.impl.portal.screenCast" = "gnome";
-    };
-    };
-
-    extraPortals = [
-      pkgs.xdg-desktop-portal
-      #pkgs.xdg-desktop-portal-gnome
-      #pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
-    ];
-    configPackages = [ pkgs.xdg-desktop-portal-wlr ];
-  };
-
   security = {
-    # userland niceness
     rtkit.enable = true;
+    polkit.enable = true;
 
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;

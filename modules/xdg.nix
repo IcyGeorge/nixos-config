@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 with lib;
 let
   defaultApps = {
@@ -49,8 +49,6 @@ let
     ];
     directory = [ "inode/directory" ];
     browser = [
-      "https://"
-      "http://"
       "text/html"
       "x-scheme-handler/about"
       "x-scheme-handler/http"
@@ -93,11 +91,29 @@ let
     );
 in
 {
+
+  xdg.portal.wlr = {
+    enable = true;
+    settings = {
+      screencast = {
+        chooser_type = "none";
+        #exec_before = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} --dnd-on --skip-wait";
+        #exec_after = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} --dnd-off --skip-wait";
+      };
+    };
+  };
+
+
+  environment.systemPackages = with pkgs; [
+    xdg-utils
+  ];
+
   home-manager.users.${config.var.username} = {
     xdg.configFile."mimeapps.list".force = true;
     xdg.mimeApps.enable = true;
     xdg.mimeApps.associations.added = associations;
     xdg.mimeApps.defaultApplications = associations;
+
 
     home.sessionVariables = {
       # prevent wine from creating file associations
