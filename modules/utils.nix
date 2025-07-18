@@ -37,6 +37,9 @@ in
       implementation = "broker";
     };
     gnome.gnome-keyring.enable = true;
+    libinput = {
+      enable = true;
+    };
   };
   console.keyMap = keyboardLayout;
 

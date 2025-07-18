@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  #boot.initrd.kernelModules = [ "amdgpu" ];
 
   hardware.graphics = {
     enable = true;
@@ -16,7 +16,7 @@
   environment.systemPackages = with pkgs; [
     vulkan-tools
     vulkan-loader
-    amdvlk
+    #amdvlk
   ];
 
   environment.variables = {
