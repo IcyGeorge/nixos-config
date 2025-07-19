@@ -26,12 +26,6 @@ in
 
 
   services = {
-    xserver = {
-      enable = true;
-      xkb.layout = keyboardLayout;
-      xkb.variant = "";
-      excludePackages = [ pkgs.xterm ];
-    };
     dbus = {
       enable = true;
       implementation = "broker";

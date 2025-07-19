@@ -3,12 +3,10 @@
   home-manager.users.${config.var.username} = {
     home.packages = with pkgs; [
       waybar
-      swaynotificationcenter
     ];
 
     programs.waybar = {
       enable = true;
-      systemd.enable = true;
       settings = {
         mainBar = {
           layer = "top";

@@ -1,44 +1,47 @@
 { config, inputs, pkgs, ... }:
-
 {
-
   programs.hyprland = {
-    enable       = true;
-    package      = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    enable = true;
+    withUWSM = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
-  home-manager.users.${config.var.username} = {
-    wayland.windowManager.hyprland.settings = {
-      # reuse the above packages
-      package       = null;
+  home-manager.users.${config.var.username} = { config, ... }: {
+    xdg.configFile."uwsm/env".source =
+      "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
+
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = null;
       portalPackage = null;
 
-      xwayland.enable   = true;
-      systemd.enable    = true;
+      xwayland.enable = true;
+      systemd.enable = true;
       systemd.variables = [ "--all" ];
-
       settings = {
+
         ################################
         # MONITOR                      #
         ################################
-        monitor = ",preferred,auto,auto";
+        monitor = ",preferred,auto,1";
 
         ################################
         # USER VARIABLES               #
         ################################
-        "$terminal"    = "kitty";
+        "$terminal" = "kitty";
         "$fileManager" = "nemo";
-        "$menu"        = "fuzzel";
-        "$mainMod"     = "SUPER";
+        "$menu" = "fuzzel";
+        "$mainMod" = "SUPER";
 
         ################################
         # AUTOSTART                    #
         ################################
         "exec-once" = [
           "$terminal"
-          "nm-applet & blueman-applet"
-          "waybar"
+          "uwsm app -- nm-applet &"
+          "uwsm app -- blueman-applet &"
+          "uwsm app -- waybar"
         ];
 
         ################################
@@ -47,41 +50,52 @@
         env = [
           "XCURSOR_SIZE,24"
           "HYPRCURSOR_SIZE,24"
+          "MOZ_ENABLE_WAYLAND,1"
+          "NIXOS_OZONE_WL,1"
+          "QT_QPA_PLATFORM,wayland"
+          "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+          "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+          "CLUTTER_BACKEND,wayland"
+          "SDL_VIDEODRIVER,wayland"
+          "XDG_CURRENT_DESKTOP,Hyprland"
+          "XDG_SESSION_TYPE,wayland"
+          "XDG_SESSION_DESKTOP,Hyprland"
         ];
 
         ################################
         # GENERAL                      #
         ################################
         general = {
-          gaps_in        = 5;
-          gaps_out       = 20;
-          border_size    = 2;
-          "col.active_border"   = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          "col.inactive_border" = "rgba(595959aa)";
+          gaps_in = 5;
+          gaps_out = 12;
+          border_size = 2;
+          "col.active_border" = "rgba(a9b665ee) rgba(d8a657ee) 45deg";
+          "col.inactive_border" = "rgba(3c3836ee)";
           resize_on_border = false;
-          allow_tearing    = false;
-          layout           = "dwindle";
+          allow_tearing = false;
+          layout = "dwindle";
         };
 
         ################################
         # DECORATION                   #
         ################################
         decoration = {
-          rounding       = 10;
+          rounding = 10;
           rounding_power = 2;
-          active_opacity   = 1.0;
+          active_opacity = 1.0;
           inactive_opacity = 1.0;
           shadow = {
-            enabled      = true;
-            range        = 4;
+            enabled = true;
+            range = 4;
             render_power = 3;
-            color        = "rgba(1a1a1aee)";
+            color = "rgba(1a1a1aee)";
           };
           blur = {
-            enabled   = true;
-            size      = 3;
-            passes    = 1;
-            vibrancy  = 0.1696;
+            enabled = true;
+            size = 3;
+            passes = 1;
+            vibrancy = 0.1696;
           };
         };
 
@@ -89,7 +103,7 @@
         # ANIMATIONS                   #
         ################################
         animations = {
-          enabled = "yes, please :)";
+          enabled = false;
           bezier = [
             "easeOutQuint,0.23,1,0.32,1"
             "easeInOutCubic,0.65,0.05,0.36,1"
@@ -122,7 +136,7 @@
         # LAYOUT: DWINDLE              #
         ################################
         dwindle = {
-          pseudotile     = true;
+          pseudotile = true;
           preserve_split = true;
         };
 
@@ -136,20 +150,20 @@
         ################################
         misc = {
           force_default_wallpaper = -1;
-          disable_hyprland_logo   = false;
+          disable_hyprland_logo = false;
         };
 
         ################################
         # INPUT                        #
         ################################
         input = {
-          kb_layout   = "us";
-          kb_variant  = "";
-          kb_model    = "";
-          kb_options  = "";
-          kb_rules    = "";
+          kb_layout = "us";
+          kb_variant = "";
+          kb_model = "";
+          kb_options = "caps:escape";
+          kb_rules = "";
           follow_mouse = 1;
-          sensitivity  = 0;
+          sensitivity = 0;
           touchpad = { natural_scroll = false; };
         };
 
@@ -162,7 +176,7 @@
         # PER-DEVICE INPUT             #
         ################################
         device = {
-          name        = "epic-mouse-v1";
+          name = "epic-mouse-v1";
           sensitivity = -0.5;
         };
 

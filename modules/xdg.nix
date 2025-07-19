@@ -92,15 +92,18 @@ let
 in
 {
 
-  xdg.portal.wlr = {
+  xdg.portal = {
     enable = true;
-    settings = {
-      screencast = {
-        chooser_type = "none";
-        #exec_before = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} --dnd-on --skip-wait";
-        #exec_after = "${lib.getExe' pkgs.swaynotificationcenter "swaync-client"} --dnd-off --skip-wait";
-      };
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
     };
+
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
 
