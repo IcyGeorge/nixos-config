@@ -1,7 +1,11 @@
 { config, ... }: {
-  imports = [
+    imports = [
     ../../modules/android-dev.nix
     ../../modules/ruby.nix
+    ../../modules/xserver.nix
+    ../../modules/hyprland.nix
+    ../../modules/hyprpaper.nix
+    ../../modules/kitty.nix
     ../../modules/slack.nix
     ../../modules/zoom-us.nix
     ../../modules/hardware.nix
@@ -20,10 +24,10 @@
     ../../modules/mako.nix
     ../../modules/nemo.nix
     ../../modules/nix.nix
-    ../../modules/sddm.nix
+    #../../modules/sddm.nix
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
-    ../../modules/sway.nix
+    #../../modules/sway.nix
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
