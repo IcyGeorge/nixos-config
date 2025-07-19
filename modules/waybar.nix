@@ -18,11 +18,11 @@
           "margin-bottom" = 0;
           "margin-left" = 0;
 
-          "modules-left" = [ "sway/workspaces" ];
+          "modules-left" = [ "hyprland/workspaces" ];
           "modules-center" = [ "clock" ];
           "modules-right" = [
             "tray"
-            "sway/mode"
+            "hyprland/mode"
             "cpu_text"
             "cpu"
             "memory"
@@ -31,7 +31,7 @@
             "pulseaudio"
           ];
 
-          "sway/workspaces" = {
+          "hyprland/workspaces" = {
             "disable-scroll" = true;
             "all-outputs" = false;
             tooltip = false;
@@ -42,7 +42,7 @@
             tooltip = false;
           };
 
-          "sway/mode" = {
+          "hyprland/mode" = {
             "format" = "{}";
             "max-length" = 50;
           };
@@ -161,7 +161,7 @@
           border-radius: 2px;
         }
 
-        #workspaces button.focused {
+        #workspaces button.active {
           background-color: #34381b;   /* bg_diff_green */
           color: #a9b665;              /* green */
         }

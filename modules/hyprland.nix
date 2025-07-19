@@ -67,13 +67,14 @@
         # GENERAL                      #
         ################################
         general = {
-          gaps_in = 5;
-          gaps_out = 12;
+          gaps_in = 2;
+          gaps_out = 4;
           border_size = 2;
           "col.active_border" = "rgba(a9b665ee) rgba(d8a657ee) 45deg";
           "col.inactive_border" = "rgba(3c3836ee)";
           resize_on_border = false;
           allow_tearing = false;
+          no_border_on_floating = false;
           layout = "dwindle";
         };
 
@@ -81,21 +82,26 @@
         # DECORATION                   #
         ################################
         decoration = {
-          rounding = 10;
-          rounding_power = 2;
-          active_opacity = 1.0;
-          inactive_opacity = 1.0;
+          rounding = 2;
+          #rounding_power = 2;
+          active_opacity = 0.92;
+          inactive_opacity = 0.76;
+          dim_inactive = false;
+          dim_strength = 0.04;
           shadow = {
-            enabled = true;
+            enabled = false;
             range = 4;
             render_power = 3;
-            color = "rgba(1a1a1aee)";
+            color = "rgba(1b1b1bee)";
           };
           blur = {
             enabled = true;
-            size = 3;
-            passes = 1;
-            vibrancy = 0.1696;
+            size = 5;
+            passes = 5;
+            popups = true;
+            special = true;
+            new_optimizations = true;
+            ignore_opacity = true;
           };
         };
 
@@ -103,32 +109,38 @@
         # ANIMATIONS                   #
         ################################
         animations = {
-          enabled = false;
+          enabled = true;
+          first_launch_animation = true;
+
           bezier = [
-            "easeOutQuint,0.23,1,0.32,1"
-            "easeInOutCubic,0.65,0.05,0.36,1"
-            "linear,0,0,1,1"
-            "almostLinear,0.5,0.5,0.75,1.0"
-            "quick,0.15,0,0.1,1"
+            "drag, 0.2, 1, 0.2, 1"
+            "pop, 0.1, 0.8, 0.2, 1"
+            "liner, 1, 1, 1, 1"
           ];
+
           animation = [
-            "global, 1, 10, default"
-            "border, 1, 5.39, easeOutQuint"
-            "windows, 1, 4.79, easeOutQuint"
-            "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-            "windowsOut, 1, 1.49, linear, popin 87%"
-            "fadeIn, 1, 1.73, almostLinear"
-            "fadeOut, 1, 1.46, almostLinear"
-            "fade, 1, 3.03, quick"
-            "layers, 1, 3.81, easeOutQuint"
-            "layersIn, 1, 4, easeOutQuint, fade"
-            "layersOut, 1, 1.5, linear, fade"
-            "fadeLayersIn, 1, 1.79, almostLinear"
-            "fadeLayersOut, 1, 1.39, almostLinear"
-            "workspaces, 1, 1.94, almostLinear, fade"
-            "workspacesIn, 1, 1.21, almostLinear, fade"
-            "workspacesOut, 1, 1.94, almostLinear, fade"
-            "zoomFactor, 1, 7, quick"
+            "fade, 1, 5, drag"
+
+            "windowsIn, 1, 6, drag, slide"
+            "windowsOut, 1, 10, pop, popin 75%"
+            "windowsMove, 1, 6, drag, slide"
+            "fadeIn, 1, 5, drag"
+            "fadeOut, 1, 5, drag"
+            "fadeSwitch, 1, 12, drag"
+
+            "layersIn, 1, 7, drag, slide"
+            "layersOut, 1, 20, drag"
+            "fadeLayersIn, 1, 5, drag"
+            "fadeLayersOut, 1, 10, drag"
+
+            "border, 1, 1, liner"
+            "borderangle, 1, 30, liner, loop"
+
+            "workspacesIn, 1, 7, drag, slidefade 40%"
+            "workspacesOut, 1, 7, drag, slidefade 40%"
+
+            "specialWorkspaceIn, 1, 6, drag, slidefadevert 80%"
+            "specialWorkspaceOut, 1, 6, drag, slidefadevert 65%"
           ];
         };
 
@@ -151,6 +163,8 @@
         misc = {
           force_default_wallpaper = -1;
           disable_hyprland_logo = false;
+          font_family = "Maple Mono";
+          splash_font_family = "Maple Mono";
         };
 
         ################################
