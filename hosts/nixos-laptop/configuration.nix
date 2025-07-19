@@ -4,6 +4,7 @@
     #../../modules/ruby.nix
     ../../modules/xserver.nix
     ../../modules/hyprland.nix
+    ../../modules/hyprpaper.nix
     ../../modules/kitty.nix
     ../../modules/slack.nix
     ../../modules/zoom-us.nix

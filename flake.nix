@@ -29,6 +29,10 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
@@ -39,6 +43,7 @@
             {
               nixpkgs.overlays = [
                 inputs.niri.overlays.niri
+                inputs.hyprpaper.overlays.default
                 inputs.android-nixpkgs.overlays.default
               ];
               _module.args = { inherit inputs; };
@@ -55,6 +60,7 @@
             {
               nixpkgs.overlays = [
                 inputs.niri.overlays.niri
+                inputs.hyprpaper.overlays.default
                 inputs.android-nixpkgs.overlays.default
               ];
               _module.args = { inherit inputs; };
