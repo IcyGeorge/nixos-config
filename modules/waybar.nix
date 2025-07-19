@@ -13,10 +13,10 @@
           spacing = 0;
           height = 0;
 
-          "margin-top" = 0;
-          "margin-right" = 0;
+          "margin-top" = 4;
+          "margin-right" = 4;
           "margin-bottom" = 0;
-          "margin-left" = 0;
+          "margin-left" = 4;
 
           "modules-left" = [ "hyprland/workspaces" ];
           "modules-center" = [ "clock" ];
