@@ -3,8 +3,6 @@
     #../../modules/android-dev.nix
     #../../modules/ruby.nix
     ../../modules/xserver.nix
-    #../../modules/hyprland.nix
-    #../../modules/hyprpaper.nix
     ../../modules/kitty.nix
     ../../modules/slack.nix
     ../../modules/zoom-us.nix
@@ -13,7 +11,6 @@
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
     ../../modules/fonts.nix
-    ../../modules/foot.nix
     ../../modules/fuzzel.nix
     ../../modules/fish.nix
     ../../modules/git.nix
@@ -24,17 +21,14 @@
     ../../modules/mako.nix
     ../../modules/nemo.nix
     ../../modules/nix.nix
-    #../../modules/sddm.nix
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
-    #../../modules/sway.nix
     ../../modules/niri.nix
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
     ../../modules/xdg.nix
     ../../modules/zen.nix
-
 
     # You should let those lines as is
     ./hardware-configuration.nix
