@@ -7,6 +7,7 @@
 
     programs.waybar = {
       enable = true;
+      systemd.enable = true;
       settings = {
         mainBar = {
           layer = "top";
@@ -18,11 +19,11 @@
           "margin-bottom" = 0;
           "margin-left" = 4;
 
-          "modules-left" = [ "hyprland/workspaces" ];
+          "modules-left" = [ "niri/workspaces" ];
           "modules-center" = [ "clock" ];
           "modules-right" = [
             "tray"
-            "hyprland/mode"
+            "niri/mode"
             "cpu_text"
             "cpu"
             "memory"
@@ -31,7 +32,7 @@
             "pulseaudio"
           ];
 
-          "hyprland/workspaces" = {
+          "niri/workspaces" = {
             "disable-scroll" = true;
             "all-outputs" = false;
             tooltip = false;
@@ -42,7 +43,7 @@
             tooltip = false;
           };
 
-          "hyprland/mode" = {
+          "niri/mode" = {
             "format" = "{}";
             "max-length" = 50;
           };
@@ -161,7 +162,7 @@
           border-radius: 2px;
         }
 
-        #workspaces button.active {
+        #workspaces button.focused {
           background-color: #34381b;   /* bg_diff_green */
           color: #a9b665;              /* green */
         }

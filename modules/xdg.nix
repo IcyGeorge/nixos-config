@@ -96,14 +96,24 @@ in
     enable = true;
     xdgOpenUsePortal = true;
     config = {
-      common.default = [ "gtk" ];
-      hyprland.default = [
-        "gtk"
-        "hyprland"
-      ];
+      common = {
+
+        default = [ "gtk" "gnome" ];
+        "org.freedesktop.impl.portal.FileChooser" = "gtk";
+
+
+        "org.freedesktop.impl.portal.screenCast" = "gnome";
+      };
     };
 
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
+    configPackages = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
   };
 
 

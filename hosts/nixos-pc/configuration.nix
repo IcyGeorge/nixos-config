@@ -1,5 +1,5 @@
 { config, ... }: {
-    imports = [
+  imports = [
     ../../modules/android-dev.nix
     ../../modules/ruby.nix
     ../../modules/xserver.nix

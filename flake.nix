@@ -65,8 +65,8 @@
               ];
               _module.args = { inherit inputs; };
             }
-            inputs.home-manager.nixosModules.home-manager
             inputs.niri.nixosModules.niri
+            inputs.home-manager.nixosModules.home-manager
             ./hosts/nixos-laptop/configuration.nix
           ];
         };

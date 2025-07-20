@@ -12,7 +12,7 @@
       sddm.enable = true;
       autoLogin.enable = true;
       autoLogin.user = config.var.username;
-      defaultSession = "hyprland-uwsm";
+      defaultSession = "niri";
     };
     libinput = {
       enable = true;
