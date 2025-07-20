@@ -13,6 +13,7 @@ let
     terminal = [ "foot.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "webcord.desktop" ];
+    slack = [ "slack.desktop" ];
   };
 
   mimeMap = {
@@ -76,6 +77,7 @@ let
       "application/*tar"
     ];
     discord = [ "x-scheme-handler/discord" ];
+    slack = [ "x-scheme-handler/slack" ];
   };
 
   associations =
@@ -94,23 +96,8 @@ in
 
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common = {
-
-        default = [ "gtk" "gnome" ];
-        "org.freedesktop.impl.portal.FileChooser" = "gtk";
-
-
-        "org.freedesktop.impl.portal.screenCast" = "gnome";
-      };
-    };
-
+    configPackages = [ pkgs.niri-unstable ];
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
-    ];
-    configPackages = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
     ];
@@ -126,15 +113,6 @@ in
     xdg.mimeApps.enable = true;
     xdg.mimeApps.associations.added = associations;
     xdg.mimeApps.defaultApplications = associations;
-    xdg.desktopEntries.slack = {
-      name = "Slack";
-      genericName = "Slack for Linux";
-      icon = "slack";
-      type = "Application";
-      exec = "slack --enable-features=UseOzonePlatform --ozone-platform=wayland --use-gl=egl";
-      categories = [ "Network" "InstantMessaging" ];
-    };
-
 
     home.sessionVariables = {
       # prevent wine from creating file associations

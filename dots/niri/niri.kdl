@@ -48,6 +48,19 @@ input {
 	disable-power-key-handling
 }
 
+output "DP-1" {
+        focus-at-startup
+}
+
+output "HDMI-A-1" {
+        // off
+        scale 1.5
+        position x=-2560 y=0
+        //variable-refresh-rate // on-demand=true
+        //focus-at-startup
+}
+
+
 layout {
 	focus-ring {
 		off // Disable focus ring, use border instead		
@@ -297,8 +310,8 @@ binds {
 	// Suggested binds for running programs: terminal, app launcher, screen locker.
 	Mod+Return { spawn "@kitty@/bin/kitty"; }
 	Mod+D { spawn "@fuzzel@/bin/fuzzel"; }
-	//Mod+Shift+G { spawn "@swaync@/bin/swaync-client" "-t"; }
-	//Mod+G { spawn "@swaync@/bin/swaync-client" "-d"; }
+	Mod+Shift+G { spawn "@swaync@/bin/swaync-client" "-t"; }
+	Mod+G { spawn "@swaync@/bin/swaync-client" "-d"; }
 
 	// Function row
 	XF86AudioMute { spawn "@wireplumber@/bin/wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
@@ -416,7 +429,7 @@ binds {
 
 	Mod+O repeat=false { toggle-overview; }
 
-	Mod+E repeat=false { spawn "@wlkbptr@/bin/wl-kbptr" "-o" "modes=tile,split" "-r" "10000x10000+0+0" "-o" "home_row_keys=asdfjklmcbv"; }
+	// Mod+E repeat=false { spawn "@wlkbptr@/bin/wl-kbptr" "-o" "modes=tile,split" "-r" "10000x10000+0+0" "-o" "home_row_keys=asdfjklmcbv"; }
 
 	// Mouseless
 	Mod+Alt+H { spawn "@wlrctl@/bin/wlrctl" "pointer" "move" "-10" "0"; }
