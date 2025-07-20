@@ -50,11 +50,7 @@ input {
 
 layout {
 	focus-ring {
-		off // Disable focus ring, use border instead
-		width 2
-		inactive-color "#000000"
-		active-gradient from="#a9b665ee" to="#d8a657ee" angle=45
-		urgent-color "#e78a4e"
+		off // Disable focus ring, use border instead		
 	}
 
 	// similar to the focus ring, but always visible.

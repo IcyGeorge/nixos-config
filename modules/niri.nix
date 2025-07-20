@@ -9,11 +9,7 @@ in
   };
   home-manager.users.${config.var.username} = {
     home.packages = with pkgs; [
-      swaybg
       xwayland-satellite-unstable
-      playerctl
-      brightnessctl
-      bemoji
     ];
 
     programs.niri.package = pkgs.niri-unstable;

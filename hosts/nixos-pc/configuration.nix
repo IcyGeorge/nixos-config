@@ -3,8 +3,8 @@
     ../../modules/android-dev.nix
     ../../modules/ruby.nix
     ../../modules/xserver.nix
-    ../../modules/hyprland.nix
-    ../../modules/hyprpaper.nix
+    #../../modules/hyprland.nix
+    #../../modules/hyprpaper.nix
     ../../modules/kitty.nix
     ../../modules/slack.nix
     ../../modules/zoom-us.nix
@@ -28,6 +28,7 @@
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
     #../../modules/sway.nix
+    ../../modules/niri.nix
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
