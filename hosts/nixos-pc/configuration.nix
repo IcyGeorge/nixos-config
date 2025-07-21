@@ -29,6 +29,7 @@
     ../../modules/waybar.nix
     ../../modules/xdg.nix
     ../../modules/zen.nix
+    ../../modules/clipse.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix

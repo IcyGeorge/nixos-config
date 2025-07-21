@@ -302,6 +302,12 @@ layer-rule {
 	match at-startup=true
 	block-out-from "screencast"
 }
+window-rule {
+        match app-id="^clipse$"
+        open-floating true
+        default-column-width  { proportion 0.66; }
+        default-window-height { proportion 0.66; }
+}
 
 binds {
 	// shows a list of important hotkeys.
@@ -329,7 +335,7 @@ binds {
 	Shift+XF86MonBrightnessDown { spawn "@brightnessctl@/bin/brightnessctl" "set" "1%-"; }
 
 	// Clipboard overlay
-	Control+Alt+H { spawn "@copyq@/bin/copyq" "menu"; }
+	Control+Alt+H { spawn "@kitty@/bin/kitty" "--class" "clipse" "-e" "@clipse@/bin/clipse"; }
 
 	Mod+Shift+Q { close-window; }
 
@@ -429,7 +435,7 @@ binds {
 
 	Mod+O repeat=false { toggle-overview; }
 
-	// Mod+E repeat=false { spawn "@wlkbptr@/bin/wl-kbptr" "-o" "modes=tile,split" "-r" "10000x10000+0+0" "-o" "home_row_keys=asdfjklmcbv"; }
+	Mod+E repeat=false { spawn "@wlkbptr@/bin/wl-kbptr" "-o" "modes=tile,split" "-r" "10000x10000+0+0" "-o" "home_row_keys=asdfjklmcbv"; }
 
 	// Mouseless
 	Mod+Alt+H { spawn "@wlrctl@/bin/wlrctl" "pointer" "move" "-10" "0"; }

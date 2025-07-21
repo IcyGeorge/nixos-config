@@ -32,7 +32,7 @@ in
     };
     gnome.gnome-keyring.enable = true;
 
-  # Logitech mouse
+    # Logitech mouse
     ratbagd.enable = true;
     libinput = {
       enable = true;
@@ -84,8 +84,8 @@ in
     # don’t shutdown when power button is short-pressed
     HandlePowerKey=ignore
   '';
-  
- systemd.user.services.polkit-gnome-authentication-agent-1 = {
+
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
     wants = [ "graphical-session.target" ];

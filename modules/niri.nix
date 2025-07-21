@@ -1,6 +1,44 @@
 { config, inputs, lib, pkgs, ... }:
 let
   configDirectory = config.var.configDirectory;
+  swayexitify = pkgs.writeShellScriptBin "swayexitify" ''
+    lock() {
+      ${pkgs.swaylock}/bin/swaylock
+    }
+
+    case "$1" in
+        lock)
+            lock &
+            ;;
+        logout)
+            ${pkgs.sway}/bin/swaymsg exit
+            ;;
+        suspend)
+            ${pkgs.systemd}/bin/systemctl suspend
+            ;;
+        hibernate)
+            ${pkgs.systemd}/bin/systemctl hibernate
+            ;;
+        reboot)
+            ${pkgs.systemd}/bin/systemctl reboot
+            ;;
+        shutdown)
+            ${pkgs.systemd}/bin/systemctl poweroff
+            ;;
+        *)
+            echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+            exit 2
+    esac
+
+    exit 0
+  '';
+  niriswitch = pkgs.writeShellScriptBin "niriswitch" ''
+    windows=$(${pkgs.niri}/bin/niri msg -j windows)
+    ${pkgs.niri}/bin/niri msg action focus-window --id \
+      $(echo "$windows" | 
+        ${pkgs.jq}/bin/jq ".[$(echo "$windows" | ${pkgs.jq}/bin/jq -r 'map("\(.title // .app_id)\u0000icon\u001f\(.app_id)") | .[]' | ${pkgs.fuzzel}/bin/fuzzel -d --index)].id"
+      )
+  '';
 in
 {
   programs.niri = {
@@ -16,16 +54,15 @@ in
     programs.niri.config = builtins.readFile (pkgs.replaceVars ../dots/niri/niri.kdl {
       cursorTheme = "Bibata-Modern-Ice";
       swaync = "${pkgs.swaynotificationcenter}";
-      copyq = "${pkgs.copyq}";
-      #  cursorTheme = "${config.gtk.cursorTheme.name}";
+      clipse = "${pkgs.clipse}";
       kitty = "${pkgs.kitty}";
       fuzzel = "${pkgs.fuzzel}";
       wireplumber = "${pkgs.wireplumber}";
       playerctl = "${pkgs.playerctl}";
       brightnessctl = "${pkgs.brightnessctl}";
       bemoji = "${pkgs.bemoji}";
-      swayexitify = null;
-      niriswitch = null;
+      swayexitify = swayexitify;
+      niriswitch = niriswitch;
       wlkbptr = "${pkgs.wl-kbptr}";
       wlrctl = "${pkgs.wlrctl}";
       # bash = "${pkgs.bash}";
@@ -71,7 +108,6 @@ in
       Install = {
         WantedBy = [ "graphical-session.target" ];
       };
-
     };
   };
 }
