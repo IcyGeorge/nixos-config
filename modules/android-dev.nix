@@ -41,6 +41,7 @@ in
       qemu_kvm
       xorg.libX11
       (android-studio.override { forceWayland = true; }) # to fix studio with hiDPI monitors
+      mitmproxy
     ];
   };
 
