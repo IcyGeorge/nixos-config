@@ -12,6 +12,8 @@ in
 
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
+  
+  
 
   system.autoUpgrade = {
     enable = autoUpgrade;
@@ -34,9 +36,11 @@ in
 
     # Logitech mouse
     ratbagd.enable = true;
-    libinput = {
-      enable = true;
-    };
+    libinput.enable = true;
+    
+    devmon.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
   };
   console.keyMap = keyboardLayout;
 
