@@ -93,20 +93,25 @@ let
     );
 in
 {
-
-  xdg.portal = {
-    enable = true;
-    configPackages = [ pkgs.niri-unstable ];
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
-    ];
-  };
-
-
   environment.systemPackages = with pkgs; [
     xdg-utils
   ];
+  
+  xdg.portal = {
+  enable = true;
+  xdgOpenUsePortal = true;
+  extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
+  config = {
+    common = {
+      default = [ "gnome" "gtk" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+      "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+    };
+  };
+};
+
 
   home-manager.users.${config.var.username} = {
     xdg.configFile."mimeapps.list".force = true;
