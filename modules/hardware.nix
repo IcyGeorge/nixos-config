@@ -1,16 +1,13 @@
 { inputs, pkgs, ... }:
-let
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
 {
   #boot.initrd.kernelModules = [ "amdgpu" ];
 
   hardware.graphics = {
     enable = true;
-    package = pkgs-unstable.mesa;
+    package = pkgs.mesa;
     # if you also want 32-bit support (e.g for Steam)
     enable32Bit = true;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa;
+    package32 = pkgs.pkgsi686Linux.mesa;
     extraPackages = with pkgs; [
       intel-media-driver
       (vaapiIntel.override { enableHybridCodec = true; })
