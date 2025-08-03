@@ -1,0 +1,11 @@
+[[language]]
+name = "nix"
+formatter = { command = "nixpkgs" }
+language-servers = [ "nixpkgs-fmt" ]
+auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer"]
+auto-format = true
+

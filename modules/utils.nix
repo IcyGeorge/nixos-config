@@ -12,8 +12,8 @@ in
 
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
-  
-  
+
+
 
   system.autoUpgrade = {
     enable = autoUpgrade;
@@ -37,7 +37,7 @@ in
     # Logitech mouse
     ratbagd.enable = true;
     libinput.enable = true;
-    
+
     devmon.enable = true;
     gvfs.enable = true;
     udisks2.enable = true;
@@ -47,9 +47,9 @@ in
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    EDITOR = "gnome-text-editor";
-    TERMINAL = "foot";
-    TERM = "foot";
+    EDITOR = "hx";
+    TERMINAL = "kitty";
+    TERM = "kitty";
     BROWSER = "zen-beta";
   };
 
@@ -70,8 +70,6 @@ in
     networkmanagerapplet
     wget
     curl
-    vim
-    nixpkgs-fmt
     zip
     unzip
   ];

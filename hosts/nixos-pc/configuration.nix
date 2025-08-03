@@ -18,6 +18,7 @@
     ../../modules/gtk.nix
     ../../modules/home-manager.nix
     ../../modules/lazygit.nix
+    ../../modules/helix.nix
     ../../modules/mako.nix
     ../../modules/nemo.nix
     ../../modules/nix.nix
