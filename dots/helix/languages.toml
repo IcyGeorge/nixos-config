@@ -1,7 +1,7 @@
 [[language]]
 name = "nix"
-formatter = { command = "nixpkgs" }
-language-servers = [ "nixpkgs-fmt" ]
+formatter.command = "nixpkgs-fmt"
+language-servers = [ "nixd" ]
 auto-format = true
 
 [[language]]
