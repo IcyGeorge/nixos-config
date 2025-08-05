@@ -12,8 +12,8 @@ input {
 
 		// You can set the keyboard repeat parameters. The defaults match wlroots and sway.
 		// Delay is in milliseconds before the repeat starts. Rate is in characters per second.
-		// repeat-delay 600
-		// repeat-rate 25
+		repeat-delay 400
+		repeat-rate 25
 
 		// Niri can remember the keyboard layout globally (the default) or per-window.
 		// - "global" - layout change is global for all windows.
