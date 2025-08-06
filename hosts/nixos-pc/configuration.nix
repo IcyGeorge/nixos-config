@@ -1,7 +1,6 @@
 { config, ... }: {
   imports = [
-    ../../modules/android-dev.nix
-    ../../modules/ruby.nix
+    ../../modules/dev.nix
     ../../modules/xserver.nix
     ../../modules/kitty.nix
     ../../modules/slack.nix

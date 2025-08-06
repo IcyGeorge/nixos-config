@@ -35,6 +35,7 @@ in
       }
     ];
     home.packages = with pkgs; [
+      devbox
       gradle
       jdk17
       firebase-tools
@@ -46,8 +47,13 @@ in
   };
 
 
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
   programs.adb.enable = true;
+
   users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" ];
 
   environment.variables = {
