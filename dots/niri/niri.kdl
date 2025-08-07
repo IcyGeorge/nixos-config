@@ -309,6 +309,10 @@ window-rule {
         default-column-width  { proportion 0.66; }
         default-window-height { proportion 0.66; }
 }
+window-rule {
+		match app-id="^zoom"
+		open-floating true
+}
 
 binds {
 	// shows a list of important hotkeys.
