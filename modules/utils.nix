@@ -50,7 +50,7 @@ in
     EDITOR = "hx";
     TERMINAL = "kitty";
     TERM = "kitty";
-    BROWSER = "zen-beta";
+    BROWSER = "firefox";
   };
 
   programs.dconf.enable = true;

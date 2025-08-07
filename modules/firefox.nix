@@ -1,12 +1,8 @@
-# Zen is a minimalistic web browser.
-{ config, pkgs, inputs, ... }:
+# Firefox!.
+{ config, ... }:
 {
   home-manager.users.${config.var.username} = {
-    imports = [
-      inputs.zen-browser.homeModules.beta
-    ];
-
-    programs.zen-browser = {
+    programs.firefox = {
       enable = true;
       policies = {
         DisableAppUpdate = true;

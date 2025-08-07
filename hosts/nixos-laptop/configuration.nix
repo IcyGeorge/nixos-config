@@ -28,7 +28,7 @@
     ../../modules/utils.nix
     ../../modules/waybar.nix
     ../../modules/xdg.nix
-    ../../modules/zen.nix
+    ../../modules/firefox.nix
     ../../modules/clipse.nix
 
     # You should let those lines as is
