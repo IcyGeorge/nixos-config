@@ -61,6 +61,14 @@ output "HDMI-A-1" {
 }
 
 
+output "HDMI-A-3" {
+        // off
+        scale 2
+        // position x=-2560 y=0
+        //variable-refresh-rate // on-demand=true
+        //focus-at-startup
+}
+
 layout {
 	focus-ring {
 		off // Disable focus ring, use border instead		
