@@ -30,6 +30,7 @@ in
             emulator
             #system-images-android-36-google-apis-x86-64 -> if you don't need playstore 
             system-images-android-36-google-apis-playstore-x86-64
+            system-images-android-29-google-apis-playstore-x86
           ];
         };
       }
@@ -52,8 +53,10 @@ in
   };
 
   programs.adb.enable = true;
+  
+  virtualisation.libvirtd.enable = true;
 
-  users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" ];
+  users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" "libvirtd" ];
 
   environment.variables = {
     ANDROID_HOME = sdkPath; # Primary as per docs
