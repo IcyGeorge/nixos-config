@@ -19,5 +19,5 @@
     };
   };
   # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  systemd.services.NetworkManager.serviceConfig.TimeoutStopSec = "15s";
 }
