@@ -1,16 +1,10 @@
 { config, lib, pkgs, ... }:
 {
 
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -37,6 +31,33 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+  
+  # Enable OpenGL
+  hardware.graphics = {
+    enable = true;
+    package = pkgs.mesa;
+    # if you also want 32-bit support (e.g for Steam)
+    enable32Bit = true;
+    package32 = pkgs.pkgsi686Linux.mesa;
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+      libva
+    ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    vulkan-loader
+    #amdvlk
+  ];
+  
+  environment.variables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    VDPAU_DRIVER = "nvidia";
+    NIXOS_OZONE_WL = "1";
+  };
+  
 }

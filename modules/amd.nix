@@ -1,7 +1,5 @@
 { inputs, pkgs, ... }:
 {
-  #boot.initrd.kernelModules = [ "amdgpu" ];
-
   hardware.graphics = {
     enable = true;
     package = pkgs.mesa;
@@ -9,10 +7,9 @@
     enable32Bit = true;
     package32 = pkgs.pkgsi686Linux.mesa;
     extraPackages = with pkgs; [
-      intel-media-driver
-      (vaapiIntel.override { enableHybridCodec = true; })
       vaapiVdpau
       libvdpau-va-gl
+      libva
     ];
   };
 
