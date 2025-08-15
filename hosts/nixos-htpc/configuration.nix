@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../modules/kodi.nix
     ../../modules/nvidia.nix
     ../../modules/dev.nix
     ../../modules/xserver.nix

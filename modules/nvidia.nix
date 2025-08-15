@@ -31,7 +31,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
   
   # Enable OpenGL
@@ -51,6 +51,7 @@
   environment.systemPackages = with pkgs; [
     vulkan-tools
     vulkan-loader
+    nvidia-vaapi-driver
     #amdvlk
   ];
   
