@@ -1,7 +1,7 @@
 { config, ... }: {
   imports = [
     ../../modules/kodi.nix
-    ../../modules/nvidia.nix
+    ../../modules/amd.nix
     ../../modules/dev.nix
     ../../modules/xserver.nix
     ../../modules/kitty.nix
