@@ -53,7 +53,7 @@ in
   };
 
   programs.adb.enable = true;
-  
+
   virtualisation.libvirtd.enable = true;
 
   users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" "libvirtd" ];

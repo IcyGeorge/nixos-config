@@ -33,7 +33,7 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
-  
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
@@ -54,11 +54,11 @@
     nvidia-vaapi-driver
     #amdvlk
   ];
-  
+
   environment.variables = {
     LIBVA_DRIVER_NAME = "nvidia";
     VDPAU_DRIVER = "nvidia";
     NIXOS_OZONE_WL = "1";
   };
-  
+
 }

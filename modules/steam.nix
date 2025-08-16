@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs = {
     # Enable Steam Game
     # Gamescope session inside game.
@@ -38,7 +38,7 @@
     gamemode = {
       # Feral Interactive optimizations. Use Steam launch option: gamemoderun %command%
       enable = true;
-      settings = {};
+      settings = { };
       enableRenice = true;
     };
     # Gamescope, Dont use separate gamescope as this is causing steam gamescopeSession issue.

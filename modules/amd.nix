@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   # Video Drivers
   hardware = {
     amdgpu = {
@@ -15,6 +15,9 @@
         rocmPackages.clr.icd # AMD required pkg
         libva
         libva-utils
+        vulkan-loader
+        vulkan-validation-layers
+        vulkan-extension-layer
         vulkan-tools
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
@@ -26,7 +29,7 @@
     };
   };
   # GPU Settings RX 7800XT & 9070XT
-  boot.kernelModules = ["amdgpu"];
+  boot.kernelModules = [ "amdgpu" ];
   hardware.enableRedistributableFirmware = true;
   environment.systemPackages = with pkgs; [
     rocmPackages.clr.icd
@@ -35,9 +38,9 @@
     "L+    /opt/rocm   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
   # nixpkgs.config.rocmSupport = true;
-   environment.variables = {
+  environment.variables = {
     LIBVA_DRIVER_NAME = "radeonsi";
     AMD_VULKAN_ICD = "RADV";
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/radeon_icd.i686.json";
   };
 }
