@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../modules/steam.nix
     ../../modules/kodi.nix
     ../../modules/amd.nix
     ../../modules/dev.nix
