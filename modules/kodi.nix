@@ -10,5 +10,12 @@
     };
   };
 
+  networking.firewall.enable = true;
+  networking.firewall = {
+    allowedTCPPorts = [ 8081 ];
+    allowedUDPPorts = [ 8081 ];
+  };
+
   users.users.${config.var.username}.extraGroups = [ "video" ];
+
 }

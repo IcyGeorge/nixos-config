@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../modules/zram.nix
     ../../modules/steam.nix
     ../../modules/kodi.nix
     ../../modules/amd.nix
@@ -33,7 +34,6 @@
     ../../modules/firefox.nix
     ../../modules/clipse.nix
     ../../modules/starship.nix
-
     # You should let those lines as is
     ./hardware-configuration.nix
     ./variables.nix
