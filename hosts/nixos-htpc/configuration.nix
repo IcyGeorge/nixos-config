@@ -1,7 +1,6 @@
 { config, ... }: {
   imports = [
-    ../../modules/zram.nix
-    ../../modules/steam.nix
+    ../../modules/jovian-htpc.nix
     ../../modules/kodi.nix
     ../../modules/amd.nix
     ../../modules/dev.nix
