@@ -20,6 +20,7 @@
       url = "github:tadfisher/android-nixpkgs/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
@@ -52,6 +53,7 @@
             }
             inputs.home-manager.nixosModules.home-manager
             inputs.niri.nixosModules.niri
+            inputs.jovian-nixos.nixosMoudles.default
             ./hosts/nixos-htpc/configuration.nix
           ];
         };
