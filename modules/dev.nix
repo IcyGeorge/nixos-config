@@ -1,9 +1,4 @@
-{ config
-, inputs
-, lib
-, pkgs
-, ...
-}:
+{ config, inputs, pkgs, ... }:
 let
   sdkPath =
     "/home/"
@@ -53,10 +48,12 @@ in
   };
 
   programs.adb.enable = true;
-
+  
+  services.udev.packages = [ pkgs.android-udev-rules ];
+  
   virtualisation.libvirtd.enable = true;
 
-  users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" "libvirtd" ];
+  users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" "libvirtd" "video" ];
 
   environment.variables = {
     ANDROID_HOME = sdkPath; # Primary as per docs
@@ -71,6 +68,12 @@ in
       pkgs.vulkan-loader
       pkgs.libGL
     ]}";
+    
+    # needed to enable emualator hardware acceleration. not sure if there is a better
+    # way to do it but works fine on my end. change this if you don't have an AMD gpu.
+    # sometimes i need to manually enable the emulator hardware acceleration from
+    # android studio.
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
   };
 
   environment.shellInit = ''
