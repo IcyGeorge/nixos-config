@@ -53,7 +53,7 @@
             }
             inputs.home-manager.nixosModules.home-manager
             inputs.niri.nixosModules.niri
-            inputs.jovian-nixos.nixosMoudles.default
+            inputs.jovian-nixos.nixosModules.default
             ./hosts/nixos-htpc/configuration.nix
           ];
         };
