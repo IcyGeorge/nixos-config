@@ -55,6 +55,12 @@ in
 
   users.users.${config.var.username}.extraGroups = [ "adbusers" "kvm" "libvirtd" "video" ];
 
+    networking.firewall.enable = true;
+  networking.firewall = {
+    allowedTCPPorts = [ 5555 ];
+    allowedUDPPorts = [ 5555 ];
+  };
+
   environment.variables = {
     ANDROID_HOME = sdkPath; # Primary as per docs
     ANDROID_SDK_ROOT = sdkPath; # Kept for compatibility
@@ -73,7 +79,9 @@ in
     # way to do it but works fine on my end. change this if you don't have an AMD gpu.
     # sometimes i need to manually enable the emulator hardware acceleration from
     # android studio.
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+    #LIBVA_DRIVER_NAME = "radeonsi";
+    #AMD_VULKAN_ICD = "RADV";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";#:/run/opengl-driver-32/share/vulkan/icd.d/radeon_icd.i686.json";
   };
 
   environment.shellInit = ''
