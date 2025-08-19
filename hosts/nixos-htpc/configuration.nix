@@ -2,7 +2,7 @@
   imports = [
     ../../modules/jovian-steam.nix
     ../../modules/kodi.nix
-    #    ../../modules/amd.nix
+    ../../modules/amd.nix
     ../../modules/dev.nix
     ../../modules/xserver.nix
     ../../modules/kitty.nix

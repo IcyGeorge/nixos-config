@@ -1,5 +1,9 @@
 { config, ... }: {
-  zramSwap.enable = true;
-  zramSwap.algorithm = "zstd";
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    memoryPercent = 50;
+    algorithm = "zstd";
+  };
 }
 
