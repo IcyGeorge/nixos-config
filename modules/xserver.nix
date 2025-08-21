@@ -7,13 +7,12 @@
       excludePackages = [ pkgs.xterm ];
       displayManager.lightdm.enable = lib.mkForce false;
     };
-
-    #   displayManager = {
-    #     sddm.enable = true;
-    #     autoLogin.enable = true;
-    #     autoLogin.user = config.var.username;
-    #     defaultSession = "niri";
-    #   };
+    displayManager = {
+      sddm.enable = true;
+      autoLogin.enable = true;
+      autoLogin.user = config.var.username;
+      defaultSession = "sway";
+    };
     libinput = {
       enable = true;
     };
