@@ -4,7 +4,6 @@ let
   configDirectory = config.var.configDirectory;
 
   color_fg = "#d4be98"; # foreground
-  color_bg = "#282828"; # background
   color_bg2 = "#3c3836"; # slightly lighter bg
   color_black = "#1d2021"; # dark gray/black
   color_accent = "#a9b665"; # green accent
@@ -22,7 +21,7 @@ in
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     CLUTTER_BACKEND = "wayland";
-    SDL_VIDEODRIVER = "wayland";
+    SDL_VIDEODRIVER = "wayland,x11";
     XDG_CURRENT_DESKTOP = "sway";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "sway";
@@ -41,7 +40,6 @@ in
         fuzzel = "${pkgs.fuzzel}";
         configDirectory = configDirectory;
         color_fg = color_fg;
-        color_bg = color_bg;
         color_bg2 = color_bg2;
         color_black = color_black;
         color_accent = color_accent;
