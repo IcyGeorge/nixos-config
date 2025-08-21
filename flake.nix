@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -30,13 +26,11 @@
           modules = [
             {
               nixpkgs.overlays = [
-                inputs.niri.overlays.niri
                 inputs.android-nixpkgs.overlays.default
               ];
               _module.args = { inherit inputs; };
             }
             inputs.home-manager.nixosModules.home-manager
-            inputs.niri.nixosModules.niri
             ./hosts/nixos-pc/configuration.nix
           ];
         };
@@ -46,13 +40,11 @@
           modules = [
             {
               nixpkgs.overlays = [
-                inputs.niri.overlays.niri
                 inputs.android-nixpkgs.overlays.default
               ];
               _module.args = { inherit inputs; };
             }
             inputs.home-manager.nixosModules.home-manager
-            inputs.niri.nixosModules.niri
             inputs.jovian-nixos.nixosModules.default
             ./hosts/nixos-htpc/configuration.nix
           ];
@@ -63,12 +55,10 @@
           modules = [
             {
               nixpkgs.overlays = [
-                inputs.niri.overlays.niri
                 inputs.android-nixpkgs.overlays.default
               ];
               _module.args = { inherit inputs; };
             }
-            inputs.niri.nixosModules.niri
             inputs.home-manager.nixosModules.home-manager
             ./hosts/nixos-laptop/configuration.nix
           ];

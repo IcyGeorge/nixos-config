@@ -18,7 +18,7 @@ in
     MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     CLUTTER_BACKEND = "wayland";
@@ -32,20 +32,24 @@ in
     wrapperFeatures.gtk = true;
   };
   home-manager.users.${config.var.username} = {
-
-    xdg.configFile."sway/config".text = builtins.readFile (pkgs.replaceVars ../../dots/sway/config {
-      kitty = "${pkgs.kitty}";
-      fuzzel = "${pkgs.fuzzel}";
-      configDirectory = configDirectory;
-      color_fg = color_fg;
-      color_bg = color_bg;
-      color_bg2 = color_bg2;
-      color_black = color_black;
-      color_accent = color_accent;
-      color_orange = color_orange;
-      color_bg_diff_green = color_bg_diff_green;
-      color_dim = color_dim;
-    });
+    wayland.windowManager.sway = {
+      enable = true;
+      config = null;
+      checkConfig = false;
+      extraConfig = builtins.readFile (pkgs.replaceVars ../dots/sway/config {
+        kitty = "${pkgs.kitty}";
+        fuzzel = "${pkgs.fuzzel}";
+        configDirectory = configDirectory;
+        color_fg = color_fg;
+        color_bg = color_bg;
+        color_bg2 = color_bg2;
+        color_black = color_black;
+        color_accent = color_accent;
+        color_orange = color_orange;
+        color_bg_diff_green = color_bg_diff_green;
+        color_dim = color_dim;
+      });
+    };
   };
 }
 

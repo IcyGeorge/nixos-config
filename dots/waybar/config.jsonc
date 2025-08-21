@@ -8,11 +8,11 @@
   "margin-bottom": 0,
   "margin-left": 4,
 
-  "modules-left": [ "niri/workspaces" ],
+  "modules-left": [ "sway/workspaces" ],
   "modules-center": [ "clock" ],
   "modules-right": [
     "tray",
-    "niri/mode",
+    "sway/mode",
     "cpu",
     "memory",
     "battery",
@@ -22,7 +22,7 @@
 
   /* ────────────── Modules ────────────── */
 
-  "niri/workspaces": {
+  "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
     "tooltip": false
@@ -39,7 +39,7 @@
     "tooltip": false
   },
 
-  "niri/mode": {
+  "sway/mode": {
     "format": "{mode}",
     "tooltip": false
   },

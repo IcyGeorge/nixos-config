@@ -4,7 +4,7 @@
     steam = {
       enable = true;
       autoStart = true;
-      desktopSession = "niri";
+      desktopSession = "sway";
       user = config.var.username;
     };
 
