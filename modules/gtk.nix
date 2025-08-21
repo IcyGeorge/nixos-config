@@ -28,6 +28,8 @@
         package = pkgs.bibata-cursors;
         size = 24;
       };
+      gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
+      gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
     };
 
     home.pointerCursor = {
@@ -35,5 +37,6 @@
       package = pkgs.bibata-cursors;
       size = 24;
     };
+    dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 }

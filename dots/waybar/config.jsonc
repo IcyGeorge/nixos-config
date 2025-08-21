@@ -40,8 +40,8 @@
   },
 
   "sway/mode": {
-    "format": "{mode}",
-    "tooltip": false
+    "format": "{}",
+    "max-length": 50
   },
 
   "cpu": {
