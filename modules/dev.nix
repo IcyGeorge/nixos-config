@@ -70,10 +70,6 @@ in
 
     # assuming that you have programs.adb.enable = true; and  ["kvm" "adbusers"] groups added
     # emulator related: vulkan-loader and libGL shared libs are necessary for hardware decoding
-    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [
-      pkgs.vulkan-loader
-      pkgs.libGL
-    ]}";
 
     # needed to enable emualator hardware acceleration. not sure if there is a better
     # way to do it but works fine on my end. change this if you don't have an AMD gpu.
@@ -81,7 +77,7 @@ in
     # android studio.
     #LIBVA_DRIVER_NAME = "radeonsi";
     #AMD_VULKAN_ICD = "RADV";
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json"; #:/run/opengl-driver-32/share/vulkan/icd.d/radeon_icd.i686.json";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/radeon_icd.i686.json";
   };
 
   environment.shellInit = ''

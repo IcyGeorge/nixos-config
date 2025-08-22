@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../modules/login-manager.nix
     ../../modules/jovian-steam.nix
     ../../modules/kodi.nix
     ../../modules/amd.nix

@@ -32,7 +32,7 @@ in
       enable = true;
       implementation = "broker";
     };
-    
+
     gnome.gnome-keyring.enable = true;
 
     # Logitech mouse

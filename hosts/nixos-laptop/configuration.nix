@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../modules/login-manager.nix
     #../../modules/dev.nix
     ../../modules/xserver.nix
     ../../modules/kitty.nix

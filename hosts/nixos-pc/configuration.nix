@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../modules/login-manager.nix
     ../../modules/zram.nix
     ../../modules/steam.nix
     ../../modules/kodi.nix
