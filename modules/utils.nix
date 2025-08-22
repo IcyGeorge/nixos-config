@@ -32,6 +32,7 @@ in
       enable = true;
       implementation = "broker";
     };
+    
     gnome.gnome-keyring.enable = true;
 
     # Logitech mouse
@@ -76,7 +77,7 @@ in
 
   security = {
     rtkit.enable = true;
-    #polkit.enable = true;
+    polkit.enable = true;
     pam.services.getty.enableGnomeKeyring = true;
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;
@@ -87,17 +88,17 @@ in
     HandlePowerKey=ignore
   '';
 
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
+  #systemd.user.services.polkit-gnome-authentication-agent-1 = {
+  #  description = "polkit-gnome-authentication-agent-1";
+  #  wantedBy = [ "graphical-session.target" ];
+  #  wants = [ "graphical-session.target" ];
+  #  after = [ "graphical-session.target" ];
+  #  serviceConfig = {
+  #    Type = "simple";
+  #    ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+  #    Restart = "on-failure";
+  #    RestartSec = 1;
+  #    TimeoutStopSec = 10;
+  #  };
+  #};
 }

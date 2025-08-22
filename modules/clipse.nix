@@ -6,7 +6,7 @@
     ];
 
     services.clipse = {
-      enable = true;
+      enable = false;
       historySize = 500;
       allowDuplicates = false;
       theme = {

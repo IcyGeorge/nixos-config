@@ -98,20 +98,10 @@ in
   ];
 
   xdg.portal = {
-    enable = true;
+    wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
-    config = {
-      common = {
-        default = [ "gnome" "gtk" ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
-        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-      };
-    };
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-
 
   home-manager.users.${config.var.username} = {
     xdg.configFile."mimeapps.list".force = true;
