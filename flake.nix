@@ -31,6 +31,7 @@
               _module.args = { inherit inputs; };
             }
             inputs.home-manager.nixosModules.home-manager
+            inputs.jovian-nixos.nixosModules.default
             ./hosts/nixos-pc/configuration.nix
           ];
         };
@@ -60,6 +61,7 @@
               _module.args = { inherit inputs; };
             }
             inputs.home-manager.nixosModules.home-manager
+            inputs.jovian-nixos.nixosModules.default
             ./hosts/nixos-laptop/configuration.nix
           ];
         };
