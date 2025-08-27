@@ -1,13 +1,11 @@
 { config, pkgs, ... }:
 {
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.sway}/bin/sway";
-        user = config.var.username;
-      };
-      default_session = initial_session;
+  programs.uwsm.enable = true;
+  programs.uwsm.waylandCompositors = {
+    sway = {
+      prettyName = "Sway";
+      comment = "Sway compositor managed by UWSM";
+      binPath = "${pkgs.sway}/bin/sway";
     };
   };
 }
