@@ -33,7 +33,7 @@
 
         ## Misc
         enable_audio_bell = "no";
-        shell_integration = "enable";
+        shell_integration = "enabled";
         sync_to_monitor = "yes";
       };
 
