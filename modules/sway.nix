@@ -30,6 +30,7 @@ in
     sway
     wayland
     wl-clipboard
+    cliphist
   ];
 
   programs.uwsm.enable = true;
@@ -40,7 +41,7 @@ in
       binPath = "${pkgs.sway}/bin/sway";
     };
   };
-  
+
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

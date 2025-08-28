@@ -5,6 +5,7 @@
     ../../modules/xserver.nix
     ../../modules/kitty.nix
     ../../modules/slack.nix
+    ../../modules/starship.nix
     ../../modules/zoom-us.nix
     ../../modules/amd.nix
     ../../modules/nix-ld.nix

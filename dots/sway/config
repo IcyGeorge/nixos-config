@@ -1,3 +1,4 @@
+# networkapplet + bluetooth applet on start
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -11,6 +12,10 @@ set $right l
 set $term @kitty@/bin/kitty
 # Application launcher
 set $menu @fuzzel@/bin/fuzzel
+# Clipboard
+set $wl-copy wl-copy
+set $wl-paste wl-paste
+set $cliphist cliphist
 
 ### Output configuration
 #
@@ -45,8 +50,13 @@ client.unfocused         @color_bg2@           @color_bg2@           @color_fg@ 
 client.urgent            @color_orange@        @color_orange@        @color_dim@           @color_orange@        @color_orange@
 client.placeholder       @color_black@         @color_black@         @color_black@         @color_black@         @color_black@
 
+### Applets
+exec nm-applet
+exec blueman-applet 
 
-### Idle configuration
+### Clipboard
+exec $wl-paste --type text --watch $cliphist store
+exec $wl-paste --type image --watch $cliphist store
 #
 # Example configuration:
 #
@@ -72,7 +82,7 @@ input type:keyboard {
     xkb_layout "us"
     xkb_options grp:alt_shift_toggle,caps:escape
     repeat_delay 500
-    repeat_rate 60
+    repeat_rate 40
 }
 #
 # You can also configure each device individually.
@@ -83,13 +93,15 @@ input type:keyboard {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec uwsm app -- $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec uwsm app -- $menu
+    
+    bindsym $mod+Shift+p exec $cliphist list | fuzzel --dmenu --width=80 | $cliphist decode | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -102,7 +114,7 @@ input type:keyboard {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the SteamOS shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'start-gamescope-session'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the SteamOS shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'uwsm stop'
 #
 # Moving around:
 #
