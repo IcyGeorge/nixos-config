@@ -3,7 +3,7 @@
   jovian = {
     steam = {
       enable = true;
-      autoStart = true;
+      autoStart = config.var.htpcMode;
       desktopSession = "sway-uwsm";
       user = config.var.username;
     };

@@ -29,9 +29,10 @@
     autoUpgrade = false;
     autoGarbageCollector = true;
 
-    features = {
-      androidDev = true; # android
-    };
+    # Modes
+    htpcMode = false;
+    androidDevMode = true;
+    rustDevMode = true;
   };
 
   # Let this here

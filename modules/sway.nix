@@ -30,15 +30,17 @@ in
     sway
     wayland
     wl-clipboard
-
-    # https://github.com/Jovian-Experiments/Jovian-NixOS/issues/267
-    (writers.writeDashBin "open-steam-os" ''
-      ${systemd}/bin/systemctl --user unset-environment WAYLAND_DISPLAY SWAYSOCK
-      ${sway}/bin/swaymsg exit
-      start-gamescope-session
-    '')
   ];
 
+  programs.uwsm.enable = true;
+  programs.uwsm.waylandCompositors = {
+    sway = {
+      prettyName = "Sway";
+      comment = "Sway compositor managed by UWSM";
+      binPath = "${pkgs.sway}/bin/sway";
+    };
+  };
+  
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

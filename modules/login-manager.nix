@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
-  programs.uwsm.enable = true;
-  programs.uwsm.waylandCompositors = {
-    sway = {
-      prettyName = "Sway";
-      comment = "Sway compositor managed by UWSM";
-      binPath = "${pkgs.sway}/bin/sway";
+  config = lib.mkIf (!config.var.htpcMode) {
+    services.displayManager = {
+      sddm.enable = true;
+      autoLogin.enable = true;
+      autoLogin.user = config.var.username;
+      defaultSession = "sway-uwsm";
     };
   };
 }
