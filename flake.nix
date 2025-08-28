@@ -33,6 +33,12 @@
             }
             inputs.home-manager.nixosModules.home-manager
             inputs.jovian-nixos.nixosModules.default
+            inputs.nixos-hardware.nixosModules.common-pc
+            inputs.nixos-hardware.nixosModules.common-pc-ssd
+            inputs.nixos-hardware.nixosModules.common-hidpi
+            inputs.nixos-hardware.nixosModules.common-gpu-amd
+            inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+            inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
             ./hosts/nixos-pc/configuration.nix
           ];
         };
