@@ -28,12 +28,12 @@
 
     autoUpgrade = false;
     autoGarbageCollector = true;
-    
+
     # Modes
     htpcMode = false;
     androidDevMode = false;
     rustDevMode = true;
-    
+
   };
 
   # Let this here
