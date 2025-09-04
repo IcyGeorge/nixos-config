@@ -3,7 +3,7 @@
   home-manager.users.${config.var.username} = {
     programs.waybar = {
       enable = true;
-      systemd.enable = true;
+      # systemd.enable = true;
     };
 
     xdg.configFile = {

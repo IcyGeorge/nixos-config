@@ -8,11 +8,11 @@
   "margin-bottom": 0,
   "margin-left": 4,
 
-  "modules-left": [ "sway/workspaces" ],
+  "modules-left": [ "hyprland/workspaces" ],
   "modules-center": [ "clock" ],
   "modules-right": [
     "tray",
-    "sway/mode",
+    "hyprland/mode",
     "cpu",
     "memory",
     "battery",
@@ -22,7 +22,7 @@
 
   /* ────────────── Modules ────────────── */
 
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
     "tooltip": false
@@ -39,7 +39,7 @@
     "tooltip": false
   },
 
-  "sway/mode": {
+  "hyprland/mode": {
     "format": "{}",
     "max-length": 50
   },

@@ -18,6 +18,15 @@
     };
     jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
@@ -28,6 +37,7 @@
             {
               nixpkgs.overlays = [
                 inputs.android-nixpkgs.overlays.default
+                inputs.hyprpaper.overlays.default
               ];
               _module.args = { inherit inputs; };
             }
@@ -49,6 +59,7 @@
             {
               nixpkgs.overlays = [
                 inputs.android-nixpkgs.overlays.default
+                inputs.hyprpaper.overlays.default
               ];
               _module.args = { inherit inputs; };
             }
@@ -70,6 +81,7 @@
             {
               nixpkgs.overlays = [
                 inputs.android-nixpkgs.overlays.default
+                inputs.hyprpaper.overlays.default
               ];
               _module.args = { inherit inputs; };
             }

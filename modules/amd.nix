@@ -1,8 +1,10 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }:
+let
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
+{
   hardware.graphics = {
-    package = pkgs.mesa;
-    package32 = pkgs.pkgsi686Linux.mesa;
-    extraPackages = [ pkgs.mesa ];
-    extraPackages32 = [ pkgs.pkgsi686Linux.mesa ];
+    package = pkgs-unstable.mesa;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa;
   };
 }

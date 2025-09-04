@@ -60,7 +60,7 @@ tooltip label {
   border-radius: 2px;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
   background-color: #34381b;   /* bg_diff_green */
   color: #a9b665;              /* green */
 }

@@ -96,12 +96,12 @@ in
   environment.systemPackages = with pkgs; [
     xdg-utils
   ];
-
-  xdg.portal = {
-    wlr.enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  # XDPH is already enabled by the NixOS module for Hyprland, through programs.hyprland.enable = true;.
+  # xdg.portal = {
+  #   wlr.enable = true;
+  #   xdgOpenUsePortal = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # };
 
   home-manager.users.${config.var.username} = {
     xdg.configFile."mimeapps.list".force = true;
