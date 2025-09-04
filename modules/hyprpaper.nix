@@ -8,10 +8,10 @@
         splash = true;
         ipc = true;
         preload = [
-          "${config.var.configDirectory}/assets/wallpapers//wallpaper.jpg"
+          "${config.var.configDirectory}/assets/wallpapers/wallpaper.jpg"
         ];
         wallpaper = [
-          ", ${config.var.configDirectory}/assets/wallpapers//wallpaper.jpg"
+          "${config.var.configDirectory}/assets/wallpapers/wallpaper.jpg"
         ];
       };
     };

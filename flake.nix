@@ -13,10 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     android-nixpkgs = {
-      url = "github:tadfisher/android-nixpkgs/stable";
+      url = "github:tadfisher/android-nixpkgs/5bfe4af6e619e5f612809d7b6ec702b601ee4851";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
+    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS/479bbbef4d68f83f90074498f8b5c37ddb081f89";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -48,7 +48,6 @@
             inputs.nixos-hardware.nixosModules.common-hidpi
             inputs.nixos-hardware.nixosModules.common-gpu-amd
             inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
-            inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
             ./hosts/nixos-pc/configuration.nix
           ];
         };
@@ -70,7 +69,6 @@
             inputs.nixos-hardware.nixosModules.common-hidpi
             inputs.nixos-hardware.nixosModules.common-gpu-amd
             inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
-            inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
             ./hosts/nixos-htpc/configuration.nix
           ];
         };

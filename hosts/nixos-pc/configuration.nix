@@ -26,7 +26,8 @@
     ../../modules/nix.nix
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
-    ../../modules/sway.nix
+    ../../modules/hyprland.nix
+    ../../modules/hyprpaper.nix
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
