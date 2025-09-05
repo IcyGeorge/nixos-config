@@ -4,7 +4,7 @@
     steam = {
       enable = true;
       autoStart = config.var.htpcMode;
-      desktopSession = "sway-uwsm";
+      desktopSession = "hyprland-uwsm";
       user = config.var.username;
     };
 
