@@ -2,6 +2,7 @@
 let
   hyprlandPkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
   hyprpaperPkgs = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system};
+  hyprpickerPkgs = inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system};
   configDirectory = config.var.configDirectory;
 in
 {
@@ -17,7 +18,7 @@ in
       "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
 
     home.packages = with pkgs; [
-      hyprpicker
+      hyprpickerPkgs.hyprpicker
       wl-clipboard
       cliphist
     ];

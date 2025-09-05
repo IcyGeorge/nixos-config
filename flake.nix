@@ -27,6 +27,10 @@
       url = "github:hyprwm/hyprpaper";
       inputs.nixpkgs.follows = "hyprland/nixpkgs";
     };
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
