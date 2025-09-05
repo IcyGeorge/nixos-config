@@ -3,6 +3,7 @@ let
   hyprlandPkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
   hyprpaperPkgs = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system};
   hyprpickerPkgs = inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system};
+  hyprpolkitagentPkgs = inputs.hyprpolkitagent.packages.${pkgs.stdenv.hostPlatform.system};
   configDirectory = config.var.configDirectory;
 in
 {
@@ -18,7 +19,9 @@ in
       "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
 
     home.packages = with pkgs; [
+      hyprpaperPkgs.hyprpaper
       hyprpickerPkgs.hyprpicker
+      hyprpolkitagentPkgs.hyprpolkitagent
       wl-clipboard
       cliphist
     ];
@@ -46,10 +49,10 @@ in
     };
 
     # hyprpaper
-    services.hyprpaper = {
-      enable = true;
-      package = hyprpaperPkgs.hyprpaper;
-    };
+    # services.hyprpaper = {
+    #   enable = true;
+    #   package = hyprpaperPkgs.hyprpaper;
+    # };
     xdg.configFile."hypr/hyprpaper.conf".text = builtins.readFile (pkgs.replaceVars ../dots/hypr/hyprpaper.conf {
       configDirectory = configDirectory;
     });

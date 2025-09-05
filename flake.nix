@@ -31,6 +31,10 @@
       url = "github:hyprwm/hyprpicker";
       inputs.nixpkgs.follows = "hyprland/nixpkgs";
     };
+    hyprpolkitagent = {
+      url = "github:hyprwm/hyprpolkitagent";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
