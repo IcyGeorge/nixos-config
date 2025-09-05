@@ -1,19 +1,13 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 {
   home-manager.users.${config.var.username} = {
     services.hyprpaper = {
       enable = true;
-      package = pkgs.hyprpaper;
-      settings = {
-        splash = false;
-        ipc = true;
-        preload = [
-          "${config.var.configDirectory}/assets/wallpapers/wallpaper.jpg"
-        ];
-        wallpaper = [
-          ", ${config.var.configDirectory}/assets/wallpapers/wallpaper.jpg"
-        ];
-      };
+      package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper;
     };
+    xdg.configFile."hypr/hyprpaper.conf".text = builtins.readFile (pkgs.replaceVars ../dots/hypr/hyprpaper.conf {
+      configDirectory = config.var.configDirectory;
+    });
+
   };
 }

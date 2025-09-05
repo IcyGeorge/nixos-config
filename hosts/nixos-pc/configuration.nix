@@ -27,13 +27,11 @@
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
     ../../modules/hyprland.nix
-    ../../modules/hyprpaper.nix
     ../../modules/users.nix
     ../../modules/utils.nix
     ../../modules/waybar.nix
     ../../modules/xdg.nix
     ../../modules/firefox.nix
-    ../../modules/clipse.nix
     ../../modules/starship.nix
     # You should let those lines as is
     ./hardware-configuration.nix

@@ -1,15 +1,26 @@
 { config, inputs, pkgs, ... }:
+let
+  hyprlandPkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+  hyprpaperPkgs = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system};
+  configDirectory = config.var.configDirectory;
+in
 {
   programs.hyprland = {
     enable = true;
     withUWSM = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    package = hyprlandPkgs.hyprland;
+    portalPackage = hyprlandPkgs.xdg-desktop-portal-hyprland;
   };
 
   home-manager.users.${config.var.username} = { config, ... }: {
     xdg.configFile."uwsm/env".source =
       "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
+
+    home.packages = with pkgs; [
+      hyprpicker
+      wl-clipboard
+      cliphist
+    ];
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -32,6 +43,16 @@
         # color_dim = color_dim;
       });
     };
+
+    # hyprpaper
+    services.hyprpaper = {
+      enable = true;
+      package = hyprpaperPkgs.hyprpaper;
+    };
+    xdg.configFile."hypr/hyprpaper.conf".text = builtins.readFile (pkgs.replaceVars ../dots/hypr/hyprpaper.conf {
+      configDirectory = configDirectory;
+    });
+
   };
 }
 
