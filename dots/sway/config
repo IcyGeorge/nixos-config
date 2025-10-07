@@ -51,12 +51,14 @@ client.urgent            @color_orange@        @color_orange@        @color_dim@
 client.placeholder       @color_black@         @color_black@         @color_black@         @color_black@         @color_black@
 
 ### Applets
-exec nm-applet
-exec blueman-applet 
+exec uwsm app -- nm-applet &
+exec uwsm app -- blueman-applet &
+exec uwsm app -- waybar &
 
 ### Clipboard
 exec $wl-paste --type text --watch $cliphist store
 exec $wl-paste --type image --watch $cliphist store
+
 #
 # Example configuration:
 #
