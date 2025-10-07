@@ -24,6 +24,7 @@
     ../../modules/mako.nix
     ../../modules/nemo.nix
     ../../modules/nix.nix
+    ../../modules/qutebrowser.nix
     ../../modules/spicetify.nix
     ../../modules/systemd-boot.nix
     ../../modules/sway.nix
