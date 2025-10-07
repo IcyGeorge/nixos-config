@@ -13,6 +13,13 @@ let
 
 in
 {
+
+  xdg.portal = {
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   environment.variables = {
     # MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";

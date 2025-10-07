@@ -16,7 +16,7 @@
       url = "github:tadfisher/android-nixpkgs/5bfe4af6e619e5f612809d7b6ec702b601ee4851";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS/479bbbef4d68f83f90074498f8b5c37ddb081f89";
+    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
