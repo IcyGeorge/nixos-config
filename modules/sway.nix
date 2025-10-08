@@ -61,6 +61,7 @@ in
       extraConfig = builtins.readFile (pkgs.replaceVars ../dots/sway/config {
         kitty = "${pkgs.kitty}";
         fuzzel = "${pkgs.fuzzel}";
+        nemo = "${pkgs.nemo}";
         configDirectory = configDirectory;
         color_fg = color_fg;
         color_bg2 = color_bg2;
