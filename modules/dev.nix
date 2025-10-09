@@ -37,7 +37,7 @@ in
       qemu_kvm
       xorg.libX11
       (android-studio.override { forceWayland = true; })
-      # mitmproxy
+      mitmproxy
     ];
   };
 
