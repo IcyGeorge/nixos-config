@@ -20,9 +20,11 @@ set $cliphist cliphist
 ################
 
 output * bg @configDirectory@/assets/wallpapers/wallpaper.jpg fill
-output HDMI-A-1 scale 1.5 pos -1920 0
+output HDMI-A-1 resolution 3840x2160 position 0,0 scale 1.5
 output HDMI-A-2 scale 2.0
+output DP-1 resolution 2560x1440 position 2560,0
 
+focus output DP-1
 
 workspace 1 output DP-1
 
