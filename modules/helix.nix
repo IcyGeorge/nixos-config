@@ -5,7 +5,6 @@
   home-manager.users.${config.var.username} = {
     home.packages = with pkgs; [
       nixpkgs-fmt
-      rust-analyzer
       nixd
     ];
 

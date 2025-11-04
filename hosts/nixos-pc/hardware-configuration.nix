@@ -27,6 +27,19 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/library" = {
+    device = "/dev/disk/by-label/Library";
+    fsType = "btrfs";
+    options = [ "compress=zstd" "noatime" ];
+  };
+
+  fileSystems."/mnt/backup" = {
+    device = "/dev/disk/by-label/Data";
+    fsType = "ntfs";
+    options = [ "rw" "uid=1000" "gid=1000" "umask=022" ];
+  };
+
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
