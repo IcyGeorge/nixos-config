@@ -55,6 +55,10 @@ in
   };
 
   programs.dconf.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   # Faster rebuilding
   documentation = {
