@@ -14,5 +14,13 @@
 
     decky-loader.enable = true;
   };
+
+  environment.systemPackages = [ pkgs.lutris ];
+
+  networking.firewall.enable = true;
+  networking.firewall = {
+    allowedTCPPorts = [ 4000 ];
+    allowedUDPPorts = [ 4000 ];
+  };
 }
 
