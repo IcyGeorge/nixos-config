@@ -37,6 +37,8 @@ in
     sway
     wayland
     wl-clipboard
+    grim
+    slurp
     cliphist
   ];
 
