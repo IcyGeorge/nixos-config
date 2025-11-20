@@ -15,7 +15,7 @@
     decky-loader.enable = true;
   };
 
-  environment.systemPackages = [ pkgs.lutris pkgs.prismlauncher ];
+  environment.systemPackages = [ pkgs.lutris pkgs.protonplus pkgs.prismlauncher ];
 
   networking.firewall.enable = true;
   networking.firewall = {

@@ -1,10 +1,7 @@
-{ inputs, pkgs, ... }:
-let
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
+{ pkgs, ... }:
 {
   hardware.graphics = {
-    package = pkgs-unstable.mesa;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa;
+    enable32Bit = true;
+    extraPackages = with pkgs; [ rocmPackages.clr ];
   };
 }
