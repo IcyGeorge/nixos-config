@@ -5,7 +5,7 @@ let
 in
 {
   home-manager.users.${config.var.username} = {
-    home.packages = with pkgs; [ nemo ];
+    home.packages = with pkgs; [ nemo-with-extensions ];
 
     # bookmarks for the side pane
     gtk.gtk3.bookmarks = [
