@@ -42,7 +42,10 @@ in
     devmon.enable = true;
     gvfs.enable = true;
     udisks2.enable = true;
+
+    printing.enable = true;
   };
+
   console.keyMap = keyboardLayout;
 
   environment.variables = {
@@ -86,6 +89,13 @@ in
 
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;
+  };
+
+  services.printing.drivers = with pkgs; [ epsonscan2 ];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
   };
 
   # services.logind.extraConfig = ''
