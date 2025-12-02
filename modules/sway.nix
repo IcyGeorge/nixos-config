@@ -37,9 +37,10 @@ in
     sway
     wayland
     wl-clipboard
+    cliphist
     grim
     slurp
-    cliphist
+    playerctl
   ];
 
   programs.uwsm.enable = true;
