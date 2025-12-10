@@ -2,10 +2,10 @@
 {
   config = lib.mkIf (!config.var.htpcMode) {
     services.displayManager = {
-      sddm.enable = true;
+      gdm.enable = true;
       autoLogin.enable = true;
       autoLogin.user = config.var.username;
-      defaultSession = "sway-uwsm";
+      defaultSession = "gnome";
     };
   };
 }

@@ -10,7 +10,6 @@ let
   color_orange = "#e78a4e"; # yellow (used for urgent)
   color_bg_diff_green = "#32361a"; # diff add background (green)
   color_dim = "#1b1b1b"; # dim background (dark)
-
 in
 {
 
@@ -41,7 +40,9 @@ in
     grim
     slurp
     playerctl
+    blueman
   ];
+  services.blueman.enable = true;
 
   programs.uwsm.enable = true;
   programs.uwsm.waylandCompositors = {
