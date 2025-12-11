@@ -8,6 +8,7 @@ in
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.paperwm
+    gnomeExtensions.auto-accent-colour
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -46,6 +47,10 @@ in
         picture-uri = "${configDirectory}/assets/wallpapers/wallpaper.jpg";
         picture-uri-dark = "${configDirectory}/assets/wallpapers/wallpaper.jpg";
       };
+
+      "org/gnome/desktop/interface".clock-format = "12h";
+      "org/gtk/settings/file-chooser".clock-format = "12h";
+
       "org/gnome/TextEditor" = {
         custom-font = "Maple Mono 14";
         highlight-current-line = true;
@@ -60,6 +65,10 @@ in
         use-system-font = false;
         wrap-text = false;
       };
+
+      "org/gnome/nautilus/preferences".default-folder-viewer = "list-view";
+      "org/gtk/gtk4/settings/file-chooser".show-hidden = true;
+
       "org/gnome/mutter" = {
         experimental-features = [
           "scale-monitor-framebuffer" # Enables fractional scaling (125% 150% 175%)
@@ -72,7 +81,10 @@ in
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
           pkgs.gnomeExtensions.paperwm.extensionUuid
         ];
+
+        "app-switcher/current-workspace-only" = true;
       };
+
       "org/gnome/shell/extensions/paperwm" = {
         selection-border-szie = 4;
         selection-border-radius-bottom = 0;
