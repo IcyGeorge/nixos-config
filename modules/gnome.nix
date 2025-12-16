@@ -43,6 +43,10 @@ in
         button-layout = "appmenu";
       };
 
+      "org/gnome/desktop/input-sources".xkb-options = [
+        "caps:escape"
+      ];
+
       "org/gnome/desktop/background" = {
         picture-uri = "${configDirectory}/assets/wallpapers/wallpaper.jpg";
         picture-uri-dark = "${configDirectory}/assets/wallpapers/wallpaper.jpg";
