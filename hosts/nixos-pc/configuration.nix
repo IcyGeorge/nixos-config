@@ -4,6 +4,7 @@
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
     ../../modules/dev.nix
+    ../../modules/emacs.nix
     ../../modules/firefox.nix
     ../../modules/fish.nix
     ../../modules/fonts.nix

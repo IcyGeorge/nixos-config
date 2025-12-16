@@ -18,6 +18,7 @@
     };
     jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
@@ -28,6 +29,7 @@
             {
               nixpkgs.overlays = [
                 inputs.android-nixpkgs.overlays.default
+                inputs.emacs-overlay.overlays.default
               ];
               _module.args = { inherit inputs; };
             }
