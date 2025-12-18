@@ -1,8 +1,9 @@
 { pkgs, ... }: {
 
   fonts = {
+    fontconfig.enable = true;
     packages = with pkgs; [
-      maple-mono.truetype-autohint
+      maple-mono.NF-unhinted
       work-sans
       comic-neue
       source-sans
@@ -17,6 +18,7 @@
       noto-fonts-color-emoji
       nerd-fonts.fira-code
       nerd-fonts.meslo-lg
+      nerd-fonts.jetbrains-mono
       openmoji-color
       twemoji-color-font
     ];

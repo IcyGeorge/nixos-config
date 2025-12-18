@@ -38,14 +38,15 @@ in
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         accent-color = "green";
+        font-name = "JetBrainsMono NF 14";
+        document-font-name = "JetBrainsMono NF 14";
+        monospace-font-name = "JetBrainsMono NF 14";
       };
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu";
       };
 
-      "org/gnome/desktop/input-sources".xkb-options = [
-        "caps:escape"
-      ];
+      "org/gnome/desktop/input-sources".xkb-options = [ ]; # remaped using keyd
 
       "org/gnome/desktop/background" = {
         picture-uri = "${configDirectory}/assets/wallpapers/wallpaper.jpg";
@@ -56,7 +57,7 @@ in
       "org/gtk/settings/file-chooser".clock-format = "12h";
 
       "org/gnome/TextEditor" = {
-        custom-font = "Maple Mono 14";
+        custom-font = "JetBrainsMono NF 14";
         highlight-current-line = true;
         indent-style = "space";
         restore-session = false;
