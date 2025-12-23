@@ -56,7 +56,7 @@ in
       "org/gtk/settings/file-chooser".clock-format = "12h";
 
       "org/gnome/TextEditor" = {
-        custom-font = "Maple Mono 14";
+        custom-font = "Maple Mono NF 14";
         highlight-current-line = true;
         indent-style = "space";
         restore-session = false;

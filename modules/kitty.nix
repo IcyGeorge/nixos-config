@@ -6,7 +6,7 @@
       enable = true;
       themeFile = "GruvboxMaterialDarkMedium";
       font = {
-        name = "Maple Mono";
+        name = "Maple Mono NF";
         size = 14;
       };
 

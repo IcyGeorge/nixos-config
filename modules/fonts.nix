@@ -2,7 +2,7 @@
 
   fonts = {
     packages = with pkgs; [
-      maple-mono.truetype-autohint
+      maple-mono.NF-unhinted
       work-sans
       comic-neue
       source-sans
