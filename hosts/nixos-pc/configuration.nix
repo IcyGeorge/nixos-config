@@ -4,6 +4,7 @@
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
     ../../modules/dev.nix
+    ../../modules/emacs.nix
     ../../modules/firefox.nix
     ../../modules/fish.nix
     ../../modules/fonts.nix
@@ -15,6 +16,7 @@
     ../../modules/jovian-steam.nix
     ../../modules/kitty.nix
     ../../modules/kodi.nix
+    ../../modules/keyd.nix
     ../../modules/lazygit.nix
     ../../modules/login-manager.nix
     ../../modules/nix-ld.nix
