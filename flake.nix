@@ -74,8 +74,13 @@
               ];
               _module.args = { inherit inputs; };
             }
+            inputs.nixCats.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.jovian-nixos.nixosModules.default
+			inputs.nixos-hardware.nixosModules.common-pc
+            inputs.nixos-hardware.nixosModules.common-pc-ssd
+            inputs.nixos-hardware.nixosModules.common-hidpi
+
             ./hosts/nixos-laptop/configuration.nix
           ];
         };

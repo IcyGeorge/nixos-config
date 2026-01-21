@@ -1,36 +1,30 @@
 { config, ... }: {
   imports = [
-    ../../modules/login-manager.nix
-    #../../modules/dev.nix
-    ../../modules/xserver.nix
-    ../../modules/kitty.nix
-    ../../modules/slack.nix
-    ../../modules/starship.nix
-    ../../modules/zoom-us.nix
-    ../../modules/amd.nix
-    ../../modules/nix-ld.nix
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
-    ../../modules/fonts.nix
-    ../../modules/fuzzel.nix
+    ../../modules/firefox.nix
     ../../modules/fish.nix
+    ../../modules/fonts.nix
     ../../modules/git.nix
     ../../modules/gnome.nix
     ../../modules/gtk.nix
     ../../modules/home-manager.nix
+    ../../modules/kitty.nix
+    ../../modules/kodi.nix
+    ../../modules/keyd.nix
     ../../modules/lazygit.nix
-    ../../modules/helix.nix
-    ../../modules/mako.nix
-    ../../modules/nemo.nix
+    ../../modules/login-manager.nix
+    ../../modules/jovian-steam.nix
+    ../../modules/neovim.nix
+    ../../modules/nix-ld.nix
     ../../modules/nix.nix
+    ../../modules/qutebrowser.nix
     ../../modules/spicetify.nix
+    ../../modules/starship.nix
     ../../modules/systemd-boot.nix
-    ../../modules/sway.nix
     ../../modules/users.nix
     ../../modules/utils.nix
-    ../../modules/waybar.nix
-    ../../modules/xdg.nix
-    ../../modules/firefox.nix
+    ../../modules/xserver.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix
