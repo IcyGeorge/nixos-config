@@ -24,6 +24,7 @@ in
             ripgrep
             fd
             tree-sitter
+			wl-clipboard
           ];
           lua = with pkgs; [
             lua-language-server
@@ -48,6 +49,8 @@ in
               lze
               lzextras
               gruvbox-material-nvim
+			  plenary-nvim
+
             ];
             extra = [
               nvim-web-devicons
@@ -60,6 +63,11 @@ in
           general = with pkgs.vimPlugins; [
             nvim-treesitter.withAllGrammars
             nvim-treesitter-textobjects
+			telescope-fzf-native-nvim
+            telescope-ui-select-nvim
+            telescope-nvim
+			lualine-nvim
+			which-key-nvim
           ];
          
           lua = with pkgs.vimPlugins; [
