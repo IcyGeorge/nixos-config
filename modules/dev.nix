@@ -36,6 +36,7 @@ in
       jdk17
       qemu_kvm
       xorg.libX11
+      android-tools
       (android-studio.override { forceWayland = true; })
       mitmproxy
     ];
@@ -46,8 +47,6 @@ in
     enable = true;
     enableFishIntegration = true;
   };
-
-  programs.adb.enable = true;
 
   # services.udev.packages = [ pkgs.android-udev-rules ];
 

@@ -18,6 +18,7 @@
     };
     jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
@@ -31,6 +32,7 @@
               ];
               _module.args = { inherit inputs; };
             }
+            inputs.nixCats.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.jovian-nixos.nixosModules.default
             inputs.nixos-hardware.nixosModules.common-pc
@@ -51,6 +53,7 @@
               ];
               _module.args = { inherit inputs; };
             }
+            inputs.nixCats.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.jovian-nixos.nixosModules.default
             inputs.nixos-hardware.nixosModules.common-pc

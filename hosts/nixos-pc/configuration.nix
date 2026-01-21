@@ -19,6 +19,7 @@
     ../../modules/keyd.nix
     ../../modules/lazygit.nix
     ../../modules/login-manager.nix
+    ../../modules/neovim.nix
     ../../modules/nix-ld.nix
     ../../modules/nix.nix
     ../../modules/qutebrowser.nix
