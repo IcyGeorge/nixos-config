@@ -3,4 +3,5 @@ return {
   { import = "plugins.telescope" },
   { import = "plugins.lualine" },
   { import = "plugins.which-key" },
+  { import = "plugins.oil" },
 }

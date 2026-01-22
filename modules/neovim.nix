@@ -50,7 +50,7 @@ in
               lzextras
               gruvbox-material-nvim
 			  plenary-nvim
-
+			  oil-nvim
             ];
             extra = [
               nvim-web-devicons

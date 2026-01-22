@@ -81,6 +81,7 @@ in
     zip
     unzip
     gparted
+	nixpkgs-fmt
   ];
 
   security = {
