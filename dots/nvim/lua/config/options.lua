@@ -14,7 +14,7 @@ local options = {
 	ttyfast = true, --faster scrolling
 	smoothscroll = true,
 	title = true, --automatic window titlebar
-	
+
 	number = true, --numbering lines
 	relativenumber = true, --toggle bound to leader nn
 	numberwidth = 4,
@@ -28,7 +28,7 @@ local options = {
 	foldmethod = "expr",
 	foldlevel = 99, --disable folding, lower #s enable
 	foldexpr = "nvim_treesitter#foldexpr()",
-	
+
 	termguicolors = true,
 
 	ignorecase = true, --ignore case while searching
@@ -40,10 +40,9 @@ local options = {
 	splitkeep = 'screen', --stablizie window open/close
 	splitbelow = true,
 	splitright = true,
-	
+
 	inccommand = 'split',
 	scrolloff = 10,
-
 }
 
 for k, v in pairs(options) do
@@ -51,5 +50,5 @@ for k, v in pairs(options) do
 end
 
 vim.diagnostic.config({
-	signs = false,
+	virtual_lines = true,
 })
