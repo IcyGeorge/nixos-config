@@ -68,6 +68,7 @@ in
             telescope-nvim
             lualine-nvim
             which-key-nvim
+            blink-cmp
           ];
 
           lua = with pkgs.vimPlugins; [

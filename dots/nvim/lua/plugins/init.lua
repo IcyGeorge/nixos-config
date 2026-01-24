@@ -5,4 +5,5 @@ return {
   { import = "plugins.which-key" },
   { import = "plugins.oil" },
   { import = "plugins.lsp" },
+  { import = "plugins.cmp" },
 }
