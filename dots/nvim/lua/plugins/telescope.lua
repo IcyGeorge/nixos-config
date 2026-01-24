@@ -57,7 +57,7 @@ end
 return {
   {
     "telescope.nvim",
-    for_cat = 'general.telescope',
+    for_cat = 'general',
     cmd = { "Telescope", "LiveGrepGitRoot" },
     -- NOTE: our on attach function defines keybinds that call telescope.
     -- so, the on_require handler will load telescope when we use those.

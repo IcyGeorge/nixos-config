@@ -24,7 +24,6 @@ in
             ripgrep
             fd
             tree-sitter
-			wl-clipboard
           ];
           lua = with pkgs; [
             lua-language-server
@@ -49,8 +48,8 @@ in
               lze
               lzextras
               gruvbox-material-nvim
-			  plenary-nvim
-			  oil-nvim
+              plenary-nvim
+              oil-nvim
             ];
             extra = [
               nvim-web-devicons
@@ -59,27 +58,28 @@ in
         };
 
         optionalPlugins = {
-        
+
           general = with pkgs.vimPlugins; [
+            nvim-lspconfig
             nvim-treesitter.withAllGrammars
             nvim-treesitter-textobjects
-			telescope-fzf-native-nvim
+            telescope-fzf-native-nvim
             telescope-ui-select-nvim
             telescope-nvim
-			lualine-nvim
-			which-key-nvim
+            lualine-nvim
+            which-key-nvim
           ];
-         
+
           lua = with pkgs.vimPlugins; [
             lazydev-nvim
           ];
-          
+
           rust = with pkgs.vimPlugins; [
           ];
-          
+
         };
       });
-      
+
       packageDefinitions.replace = {
         # These are the names of your packages
         # you can include as many as you wish.
