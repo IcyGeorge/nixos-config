@@ -120,4 +120,71 @@ return {
 			})
 		end,
 	},
+	{
+		"rust_analyzer",
+		enabled = nixCats('rust') or false,
+		lsp = {
+			filetypes = { "rust" },
+
+			settings = {
+				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+						buildScripts = { enable = true },
+					},
+
+					checkOnSave = {
+						command = "clippy",
+					},
+
+					procMacro = {
+						enable = true,
+					},
+
+					inlayHints = {
+						bindingModeHints = { enable = true },
+						chainingHints = { enable = true },
+						closingBraceHints = { enable = true, minLines = 10 },
+						closureReturnTypeHints = { enable = "always" },
+						lifetimeElisionHints = { enable = "always" },
+						parameterHints = { enable = true },
+						reborrowHints = { enable = "always" },
+						typeHints = { enable = true },
+					},
+
+					lens = {
+						enable = true,
+						implementations = true,
+						references = true,
+						run = true,
+					},
+
+					diagnostics = {
+						enable = true,
+						experimental = { enable = true },
+					},
+
+					rustfmt = {
+						extraArgs = { "+nightly" },
+					},
+				},
+			},
+		},
+	},
+	{
+		"crates.nvim",
+		ft = { "toml" },
+		after = function()
+			require("crates").setup({
+				completion = {
+					crates = {
+						enabled = true,
+					},
+				},
+				lsp = {
+					enabled = true,
+				},
+			})
+		end,
+	},
 }

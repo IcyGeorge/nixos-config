@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ inputs, ... }:
 let
   utils = inputs.nixCats.utils;
   luaPath = ./../dots/nvim/.;
@@ -76,6 +76,7 @@ in
           ];
 
           rust = with pkgs.vimPlugins; [
+			crates-nvim
           ];
 
         };
