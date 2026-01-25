@@ -82,6 +82,7 @@ in
     unzip
     gparted
 	nixpkgs-fmt
+	wl-clipboard
   ];
 
   security = {

@@ -6,4 +6,5 @@ return {
   { import = "plugins.oil" },
   { import = "plugins.lsp" },
   { import = "plugins.completion" },
+  { import = "plugins.toggleterm" },
 }

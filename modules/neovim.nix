@@ -50,6 +50,7 @@ in
               gruvbox-material-nvim
               plenary-nvim
               oil-nvim
+              toggleterm-nvim
             ];
             extra = [
               nvim-web-devicons
@@ -76,7 +77,7 @@ in
           ];
 
           rust = with pkgs.vimPlugins; [
-			crates-nvim
+            crates-nvim
           ];
 
         };
