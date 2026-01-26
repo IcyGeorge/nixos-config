@@ -18,7 +18,7 @@
     };
     jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    nixCats.url = "github:IcyGeorge/nixCats";
   };
 
   outputs = inputs @ { nixpkgs, ... }: {
