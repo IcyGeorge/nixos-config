@@ -4,14 +4,12 @@
     ../../modules/audio.nix
     ../../modules/bluetooth.nix
     ../../modules/dev.nix
-    ../../modules/emacs.nix
     ../../modules/firefox.nix
     ../../modules/fish.nix
     ../../modules/fonts.nix
     ../../modules/git.nix
     ../../modules/gnome.nix
     ../../modules/gtk.nix
-    ../../modules/helix.nix
     ../../modules/home-manager.nix
     ../../modules/jovian-steam.nix
     ../../modules/kitty.nix
