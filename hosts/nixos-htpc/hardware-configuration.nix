@@ -27,6 +27,13 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/library" =
+    {
+      device = "/dev/disk/by-label/Library";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "nofail" ];
+    };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/1ea2d6fc-92f3-430e-96d2-107d9dd6c4c7"; }];
 

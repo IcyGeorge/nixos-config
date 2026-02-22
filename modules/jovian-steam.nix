@@ -4,7 +4,7 @@
     steam = {
       enable = true;
       autoStart = config.var.htpcMode;
-      desktopSession = "sway-uwsm";
+      desktopSession = "gnome";
       user = config.var.username;
     };
 
@@ -15,7 +15,13 @@
     decky-loader.enable = true;
   };
 
-  environment.systemPackages = [ pkgs.lutris pkgs.protonplus pkgs.prismlauncher ];
+  environment.systemPackages = with pkgs; [
+    lutris
+    protonplus
+    prismlauncher
+    ludusavi
+    rclone
+  ];
 
   networking.firewall.enable = true;
   networking.firewall = {
