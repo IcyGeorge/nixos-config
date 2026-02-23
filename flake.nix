@@ -77,7 +77,7 @@
             inputs.nixCats.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.jovian-nixos.nixosModules.default
-			inputs.nixos-hardware.nixosModules.common-pc
+            inputs.nixos-hardware.nixosModules.common-pc
             inputs.nixos-hardware.nixosModules.common-pc-ssd
             inputs.nixos-hardware.nixosModules.common-hidpi
 
