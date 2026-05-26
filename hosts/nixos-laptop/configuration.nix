@@ -10,6 +10,7 @@
     ../../modules/gnome.nix
     ../../modules/gtk.nix
     ../../modules/home-manager.nix
+    ../../modules/helix.nix
     ../../modules/kitty.nix
     ../../modules/kodi.nix
     ../../modules/keyd.nix
