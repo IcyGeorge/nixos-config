@@ -16,11 +16,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    lutris
     protonplus
     prismlauncher
-    ludusavi
-    rclone
   ];
 
   networking.firewall.enable = true;
