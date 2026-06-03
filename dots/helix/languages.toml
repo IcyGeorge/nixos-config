@@ -4,13 +4,18 @@ formatter.command = "nixpkgs-fmt"
 language-servers = ["nixd"]
 auto-format = true
 
-[[language]]
-name = "rust"
-auto-format = true
-language-servers = ["rust-analyzer"]
-
 [language-server.rust-analyzer]
 command = "rust-analyzer"
 
 [language-server.rust-analyzer.config.files]
 watcher = "server"
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer", "codebook"]
+
