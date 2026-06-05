@@ -46,9 +46,6 @@
     i18n.defaultLocale = "en_US.UTF-8";
     console.keyMap = "us";
 
-    users.defaultUserShell = pkgs.zsh;
-    programs.zsh.enable = true;
-
     users.users.gmelika = {
       isNormalUser = true;
       description = "George Melika";

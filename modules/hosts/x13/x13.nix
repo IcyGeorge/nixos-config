@@ -28,6 +28,7 @@
 
       helix
       firefox
+      zsh
 
     ];
 
