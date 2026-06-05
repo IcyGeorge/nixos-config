@@ -13,6 +13,7 @@
       swappy
       wf-recorder
       brightnessctl
+      warpd
 
       adw-gtk3
       gnome-themes-extra
