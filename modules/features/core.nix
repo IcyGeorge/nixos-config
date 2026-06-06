@@ -63,9 +63,13 @@
       directory = "/home/gmelika";
     };
 
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     environment.systemPackages = with pkgs; [
       nixpkgs-fmt
-      direnv
       helix
       vim
       git
