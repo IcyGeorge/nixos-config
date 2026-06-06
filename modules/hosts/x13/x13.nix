@@ -30,6 +30,9 @@
       firefox
       zsh
 
+      yazi
+      lazygit
+      zellij
     ];
 
   };

@@ -57,6 +57,8 @@
     };
 
     environment.systemPackages = with pkgs; [
+      nixpkgs-fmt
+      direnv
       helix
       vim
       git
