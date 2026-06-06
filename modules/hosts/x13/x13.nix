@@ -14,25 +14,23 @@
 
       audio
       graphics
+      fonts
+      keyd
 
+      greetd
       niri
       noctalia
 
       alacritty
-
-      keyd
-
-      fonts
-
-      greetd
-
-      helix
-      firefox
       zsh
 
+      helix
       yazi
+
       lazygit
       zellij
+
+      firefox
     ];
 
   };
