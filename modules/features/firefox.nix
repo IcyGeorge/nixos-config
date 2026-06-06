@@ -1,9 +1,9 @@
 # Firefox!.
 { config, ... }:
 {
-  flake.nixosModules.firefox = {pkgs, ...}: {
+  flake.nixosModules.firefox = { pkgs, ... }: {
     programs.firefox.enable = true;
-  
+
   };
   # home-manager.users.${config.var.username} = {
   #   programs.firefox = {

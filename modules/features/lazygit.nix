@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.lazygit = {pkgs, ...}: {
+  flake.nixosModules.lazygit = { pkgs, ... }: {
     environment.systemPackages = [ pkgs.lazygit ];
   };
 }
