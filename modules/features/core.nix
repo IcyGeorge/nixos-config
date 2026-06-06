@@ -27,6 +27,13 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    zramSwap = {
+      enable = true;
+      priority = 100;
+      memoryPercent = 50;
+      algorithm = "zstd";
+    };
+
     services = {
       xserver = {
         enable = true;
