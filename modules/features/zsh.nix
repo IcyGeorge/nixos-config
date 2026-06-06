@@ -13,7 +13,7 @@
     hjem.users.gmelika = {
       files = {
         ".zshrc".source = ../../dots/.zshrc;
-        ".config/starship.toml".source = ../../dots/starship.toml;
+        ".config/starship.toml".source = ../../dots/.config/starship.toml;
       };
     };
   };

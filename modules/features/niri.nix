@@ -39,7 +39,7 @@
 
     hjem.users.gmelika = {
       files = {
-        ".config/niri/config.kdl".source = ../../dots/niri/config.kdl;
+        ".config/niri/config.kdl".source = ../../dots/.config/niri/config.kdl;
       };
     };
 

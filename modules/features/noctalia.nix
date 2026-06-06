@@ -7,8 +7,8 @@
 
     hjem.users.gmelika = {
       files = {
-        ".config/noctalia-shell/config.json".source = ../../dots/noctalia/noctalia.json;
-    };
+        ".config/noctalia-shell/config.json".source = ../../dots/.config/noctalia/noctalia.json;
+      };
     };
 
   };

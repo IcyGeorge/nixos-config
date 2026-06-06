@@ -8,8 +8,8 @@
       VISUAL = "hx";
     };
     hjem.users.gmelika.files = {
-      ".config/helix/config.toml".source = ../../dots/helix/config.toml;
-      ".config/helix/languages.toml".source = ../../dots/helix/languages.toml;
+      ".config/helix/config.toml".source = ../../dots/.config/helix/config.toml;
+      ".config/helix/languages.toml".source = ../../dots/.config/helix/languages.toml;
     };
   };
 }

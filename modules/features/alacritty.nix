@@ -7,7 +7,7 @@
 
     hjem.users.gmelika = {
       files = {
-        ".config/alacritty/alacritty.toml".source = ../../dots/alacritty/alacritty.toml;
+        ".config/alacritty/alacritty.toml".source = ../../dots/.config/alacritty/alacritty.toml;
       };
     };
 

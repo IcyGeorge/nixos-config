@@ -7,10 +7,10 @@
 
     hjem.users.gmelika.files = {
       ".config/zellij/config.kdl".source =
-        ../../dots/zellij/config.kdl;
+        ../../dots/.config/zellij/config.kdl;
 
       ".config/zellij/themes/gruvbox-material-dark.kdl".source =
-        ../../dots/zellij/themes/gruvbox-material-dark.kdl;
+        ../../dots/.config/zellij/themes/gruvbox-material-dark.kdl;
     };
   };
 }

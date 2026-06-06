@@ -26,6 +26,6 @@
       }
     '';
 
-    hjem.users.gmelika.files.".config/yazi".source = ../../dots/yazi;
+    hjem.users.gmelika.files.".config/yazi".source = ../../dots/.config/yazi;
   };
 }
