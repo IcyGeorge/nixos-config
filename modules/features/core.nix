@@ -70,6 +70,7 @@
 
     environment.systemPackages = with pkgs; [
       nixpkgs-fmt
+      nixd
       helix
       vim
       git

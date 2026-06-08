@@ -18,6 +18,7 @@
       adw-gtk3
       gnome-themes-extra
       papirus-icon-theme
+      bibata-cursors
     ];
 
     programs.niri.enable = true;
@@ -32,6 +33,8 @@
         ];
       };
     };
+
+    programs.dconf.enable = true;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
