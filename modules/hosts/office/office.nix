@@ -21,13 +21,13 @@
       niri
       noctalia
 
+      git
       alacritty
       zsh
 
       helix
       yazi
 
-      lazygit
       zellij
 
       androidStudio
