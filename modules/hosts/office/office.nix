@@ -33,6 +33,8 @@
       androidStudio
 
       firefox
+
+      workFlatpaks
     ];
 
   };
