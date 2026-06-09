@@ -14,6 +14,9 @@ bold_italic.family = "Maple Mono NF"
 
 size = 14.0
 
+[selection]
+save_to_clipboard = true
+
 # Colors (Gruvbox Material Dark Medium)
 
 [colors.primary]
