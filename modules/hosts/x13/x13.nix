@@ -22,13 +22,11 @@
       noctalia
 
       git
-      alacritty
+      kitty
       zsh
 
       helix
       yazi
-
-      zellij
 
       firefox
     ];
