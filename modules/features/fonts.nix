@@ -3,6 +3,7 @@
     fonts = {
       packages = with pkgs; [
         maple-mono.NF-unhinted
+        maple-mono.Normal-TTF
         work-sans
         comic-neue
         source-sans

@@ -25,13 +25,13 @@
     security.polkit.enable = true;
     services.gnome.gnome-keyring.enable = true;
 
-    xdg.portal.config = {
-      common = {
-        default = [
-          "gtk"
-          "gnome"
-        ];
-      };
+    xdg.portal = {
+      enable = true;
+
+      config.common.default = [
+        "gtk"
+        "gnome"
+      ];
     };
 
     programs.dconf.enable = true;
