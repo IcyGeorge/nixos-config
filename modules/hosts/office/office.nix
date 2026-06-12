@@ -33,6 +33,8 @@
       firefox
 
       workFlatpaks
+
+      kodi
     ];
 
   };

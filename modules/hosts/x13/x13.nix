@@ -29,6 +29,8 @@
       yazi
 
       firefox
+
+      kodi
     ];
 
   };
