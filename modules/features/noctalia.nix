@@ -10,7 +10,7 @@
 
     hjem.users.gmelika = {
       files = {
-        ".config/noctalia/config.json".source = ../../dots/.config/noctalia/config.toml;
+        ".config/noctalia/config.toml".source = ../../dots/.config/noctalia/config.toml;
       };
     };
 
