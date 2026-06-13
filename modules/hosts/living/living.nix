@@ -1,13 +1,13 @@
 { inputs, self, ... }: {
-  # office workstation
-  flake.nixosConfigurations.office = inputs.nixpkgs.lib.nixosSystem {
+  # HTPC for steamos and kodi
+  flake.nixosConfigurations.living = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
-      office
+      living
     ];
   };
 
 
-  flake.nixosModules.office = { pkgs, ... }: {
+  flake.nixosModules.livig = { pkgs, ... }: {
     imports = with self.nixosModules; [
       core
       hjem
@@ -17,7 +17,7 @@
       fonts
       keyd
 
-      greetd
+      jovianSteam
       niri
       noctalia
 
@@ -28,11 +28,7 @@
       helix
       yazi
 
-      androidStudio
-
       firefox
-
-      workFlatpaks
 
       kodi
     ];
