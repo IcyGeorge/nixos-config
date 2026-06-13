@@ -7,7 +7,7 @@
   };
 
 
-  flake.nixosModules.livig = { pkgs, ... }: {
+  flake.nixosModules.living = { pkgs, ... }: {
     imports = with self.nixosModules; [
       core
       hjem

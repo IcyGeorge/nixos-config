@@ -1,11 +1,14 @@
-{ config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
-  flake.nixosModules.helix = { pkgs, ... }: {
+  flake.nixosModules.jovianSteam = { pkgs, ... }: {
+    imports = [
+      inputs.jovian.nixosModules.default
+    ];
     jovian = {
       steam = {
         enable = true;
         autoStart = true;
-        desktopSession = "niri-session";
+        desktopSession = "niri";
         user = "gmelika";
       };
 
