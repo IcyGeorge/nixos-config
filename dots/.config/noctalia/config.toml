@@ -14,7 +14,7 @@ end = [
     "control-center",
     "session"
 ]
-start = [ "launcher", "workspaces", "media" ]
+start = [ "launcher", "workspaces", "active_window", "media" ]
 
 [lockscreen_widgets]
 enabled = true
@@ -89,6 +89,9 @@ show_label = false
 
 [widget.clock]
 format = "{:%-I:%M %p %a, %d %b}"
+
+[widget.media]
+hide_when_no_media = true
 
 [widget.network]
 show_label = false
