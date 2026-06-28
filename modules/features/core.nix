@@ -90,6 +90,8 @@
       openFirewall = true;
     };
 
+    services.openssh.enable = true;
+
     # Don't touch this
     system.stateVersion = "25.05";
   };
