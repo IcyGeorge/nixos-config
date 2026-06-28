@@ -1,18 +1,18 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 {
-  flake.nixosModules.jovianSteam = { pkgs, ... }: {
+  flake.nixosModules.jovianSteam = { pkgs, lib, ... }: {
     imports = [
       inputs.jovian.nixosModules.default
     ];
     jovian = {
       steam = {
         enable = true;
-        autoStart = true;
+        autoStart = lib.mkDefault true;
         desktopSession = "niri";
         user = "gmelika";
       };
 
-      steamos.useSteamOSConfig = true;
+      steamos.useSteamOSConfig = lib.mkDefault true;
 
       hardware.has.amd.gpu = true;
 
