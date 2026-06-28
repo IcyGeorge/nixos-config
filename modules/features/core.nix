@@ -78,6 +78,7 @@
       git
       curl
       wget
+      unzip
     ];
 
     services.printing.drivers = with pkgs; [ epsonscan2 ];

@@ -8,7 +8,6 @@
       enable = true;
       packages = [
         "com.slack.Slack"
-        "us.zoom.Zoom"
       ];
     };
 

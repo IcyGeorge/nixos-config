@@ -19,6 +19,7 @@
       gnome-themes-extra
       papirus-icon-theme
       bibata-cursors
+      playerctl
     ];
 
     programs.niri.enable = true;
