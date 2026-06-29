@@ -11,7 +11,7 @@
       environment.systemPackages = with pkgs; [
         devbox
         gradle
-        jdk17
+        jdk21
         qemu_kvm
         libX11
         android-tools
@@ -41,7 +41,7 @@
         ANDROID_HOME = sdkPath; # Primary as per docs
         ANDROID_SDK_ROOT = sdkPath; # Kept for compatibility
         GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=$ANDROID_HOME/build-tools/35.0.0/aapt2";
-        JAVA_HOME = pkgs.jdk17.home;
+        JAVA_HOME = pkgs.jdk21.home;
         _JAVA_AWT_WM_NONREPARENTING = "1";
 
         # assuming that you have programs.adb.enable = true; and  ["kvm" "adbusers"] groups added

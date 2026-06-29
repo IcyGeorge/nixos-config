@@ -19,3 +19,10 @@ name = "rust"
 auto-format = true
 language-servers = ["rust-analyzer", "codebook"]
 
+[[language]]
+name = "java"
+language-servers = ["jdtls"]
+formatter.command = "google-java-format"
+formatter.args = ["-"]
+auto-format = true
+

@@ -29,6 +29,7 @@
       yazi
 
       androidStudio
+      java
 
       firefox
 
