@@ -27,6 +27,7 @@
 
       helix
       yazi
+      inkscape
 
       firefox
 
