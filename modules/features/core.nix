@@ -82,6 +82,7 @@
       wget
       zip
       unzip
+      repgrep
     ];
 
     services.printing.drivers = with pkgs; [ epsonscan2 ];

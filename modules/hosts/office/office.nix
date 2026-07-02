@@ -27,7 +27,7 @@
 
       helix
       yazi
-      inkscape
+      aseprite
 
       vpn
 
