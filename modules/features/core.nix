@@ -80,6 +80,7 @@
       git
       curl
       wget
+      zip
       unzip
     ];
 

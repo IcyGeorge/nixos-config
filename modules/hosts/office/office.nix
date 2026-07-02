@@ -29,6 +29,8 @@
       yazi
       inkscape
 
+      vpn
+
       androidStudio
 
       firefox
