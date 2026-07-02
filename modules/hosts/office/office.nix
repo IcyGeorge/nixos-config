@@ -30,7 +30,6 @@
       inkscape
 
       androidStudio
-      java
 
       firefox
 

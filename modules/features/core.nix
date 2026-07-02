@@ -92,6 +92,12 @@
 
     services.openssh.enable = true;
 
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+    ];
+
     # Don't touch this
     system.stateVersion = "25.05";
   };
